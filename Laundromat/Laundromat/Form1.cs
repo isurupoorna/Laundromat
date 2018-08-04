@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Laundromat
 {
-    public partial class Form1 : Form
+    public partial class frm_display : Form
     {
-        public Form1()
+        public frm_display()
         {
             InitializeComponent();
         }
+
     }
 }
