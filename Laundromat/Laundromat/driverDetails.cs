@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Laundromat
 {
-    public partial class Operator_Home : Form
+    public partial class driverDetails : UserControl
     {
-        public Operator_Home()
+        public driverDetails()
         {
             InitializeComponent();
         }
 
-        private void timer_operatorTime_Tick(object sender, EventArgs e)
+        private void driverDetails_Load(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            this.lbl_time.Text = dt.ToString();
+
         }
     }
 }

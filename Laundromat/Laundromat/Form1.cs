@@ -17,5 +17,10 @@ namespace Laundromat
             InitializeComponent();
         }
 
+        private void timer_timeTableSystemTime_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            this.lbl_time.Text = dt.ToString();
+        }
     }
 }
