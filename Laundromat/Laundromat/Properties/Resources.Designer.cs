@@ -63,9 +63,50 @@ namespace Laundromat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _02_512 {
+            get {
+                object obj = ResourceManager.GetObject("02-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _11 {
             get {
                 object obj = ResourceManager.GetObject("11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _509406_200 {
+            get {
+                object obj = ResourceManager.GetObject("509406-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _509406_2001 {
+            get {
+                object obj = ResourceManager.GetObject("509406-2001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap truck_shipping_logistic_delivery_transport_supply_vehicle_3941bc31c595862b_512x512 {
+            get {
+                object obj = ResourceManager.GetObject("truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x51" +
+                        "2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

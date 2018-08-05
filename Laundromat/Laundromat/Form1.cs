@@ -22,5 +22,10 @@ namespace Laundromat
             DateTime dt = DateTime.Now;
             this.lbl_time.Text = dt.ToString();
         }
+
+        private void frm_display_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
