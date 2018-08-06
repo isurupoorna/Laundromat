@@ -21,5 +21,17 @@ namespace Laundromat
         {
 
         }
+
+        private void btn_editDriver_Click(object sender, EventArgs e)
+        {
+            btn_driverSearch.Visible = true;
+            btn_driverDelete.Visible = true;
+        }
+
+        private void btn_newDriver_Click(object sender, EventArgs e)
+        {
+            btn_driverSearch.Visible = false;
+            btn_driverDelete.Visible = false;
+        }
     }
 }

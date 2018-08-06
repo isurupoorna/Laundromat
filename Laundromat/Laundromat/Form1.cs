@@ -27,5 +27,10 @@ namespace Laundromat
         {
 
         }
+
+        private void dataGridView_displayOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

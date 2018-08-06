@@ -103,6 +103,36 @@ namespace Laundromat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap indexdiverh {
+            get {
+                object obj = ResourceManager.GetObject("indexdiverh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap indexwhitenew_1_ {
+            get {
+                object obj = ResourceManager.GetObject("indexwhitenew(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laundromat_2 {
+            get {
+                object obj = ResourceManager.GetObject("laundromat-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap truck_shipping_logistic_delivery_transport_supply_vehicle_3941bc31c595862b_512x512 {
             get {
                 object obj = ResourceManager.GetObject("truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x51" +

@@ -145,5 +145,14 @@
   <ItemGroup>
     <None Include="Resources\truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indexdiverh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indexwhitenew%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laundromat-2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
