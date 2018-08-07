@@ -154,5 +154,29 @@
   <ItemGroup>
     <None Include="Resources\laundromat-2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_fileedit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_usersadd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roadmap2%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagesrd%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download_usersadd1 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livraisonedit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %283%29%281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

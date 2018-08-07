@@ -103,6 +103,66 @@ namespace Laundromat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download__3__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download (3)(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_fileedit {
+            get {
+                object obj = ResourceManager.GetObject("download_fileedit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_road {
+            get {
+                object obj = ResourceManager.GetObject("download_road", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_usersadd1 {
+            get {
+                object obj = ResourceManager.GetObject("download_usersadd1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download_usersadd1__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download_usersadd1 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagesrd_1_ {
+            get {
+                object obj = ResourceManager.GetObject("imagesrd(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap indexdiverh {
             get {
                 object obj = ResourceManager.GetObject("indexdiverh", resourceCulture);
@@ -126,6 +186,26 @@ namespace Laundromat.Properties {
         internal static System.Drawing.Bitmap laundromat_2 {
             get {
                 object obj = ResourceManager.GetObject("laundromat-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap livraisonedit1 {
+            get {
+                object obj = ResourceManager.GetObject("livraisonedit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roadmap2_1_ {
+            get {
+                object obj = ResourceManager.GetObject("roadmap2(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
