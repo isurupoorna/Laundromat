@@ -77,5 +77,15 @@ namespace Laundromat
         {
             pnl_user.Visible = false;
         }
+
+        private void btn_mainReport_MouseHover(object sender, EventArgs e)
+        {
+            pnl_report.Visible = true;
+        }
+
+        private void btn_mainReport_MouseLeave(object sender, EventArgs e)
+        {
+            pnl_report.Visible = false;
+        }
     }
 }
