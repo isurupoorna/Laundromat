@@ -58,6 +58,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.pnl_headerOperatorHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorIn)).BeginInit();
@@ -67,6 +68,7 @@
             // pnl_headerOperatorHome
             // 
             this.pnl_headerOperatorHome.BackColor = System.Drawing.Color.Navy;
+            this.pnl_headerOperatorHome.Controls.Add(this.label3);
             this.pnl_headerOperatorHome.Controls.Add(this.label1);
             this.pnl_headerOperatorHome.Controls.Add(this.lbl_time);
             this.pnl_headerOperatorHome.Controls.Add(this.lbl_opertorTime);
@@ -318,6 +320,15 @@
             this.timer_operatorTimeTable.Interval = 1000;
             this.timer_operatorTimeTable.Tick += new System.EventHandler(this.timer_operatorTimeTable_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(553, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "label3";
+            // 
             // Operator_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -368,5 +379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDriverNumber;
         private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorOutConfirm;
         private System.Windows.Forms.Timer timer_operatorTimeTable;
+        private System.Windows.Forms.Label label3;
     }
 }
