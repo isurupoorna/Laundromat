@@ -37,6 +37,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_displayOut = new System.Windows.Forms.Panel();
             this.dataGridView_displayOut = new System.Windows.Forms.DataGridView();
+            this.dgv_outVehicleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outTimeOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outDriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_headerTimeTable = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
@@ -51,12 +57,7 @@
             this.timer_timeTableSystemTime = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_outVehicleNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_outDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_outTimeOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_outInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_outDriverName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_outDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer_timeTable = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayOut)).BeginInit();
             this.pnl_headerTimeTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -125,6 +126,43 @@
             this.dataGridView_displayOut.Size = new System.Drawing.Size(1104, 440);
             this.dataGridView_displayOut.TabIndex = 0;
             this.dataGridView_displayOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_displayOut_CellContentClick);
+            // 
+            // dgv_outVehicleNo
+            // 
+            this.dgv_outVehicleNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_outVehicleNo.DataPropertyName = "vehicle_no";
+            this.dgv_outVehicleNo.HeaderText = "Vehicle No";
+            this.dgv_outVehicleNo.Name = "dgv_outVehicleNo";
+            // 
+            // dgv_outDestination
+            // 
+            this.dgv_outDestination.DataPropertyName = "destination";
+            this.dgv_outDestination.HeaderText = "Destination";
+            this.dgv_outDestination.Name = "dgv_outDestination";
+            // 
+            // dgv_outTimeOut
+            // 
+            this.dgv_outTimeOut.DataPropertyName = "leave_time";
+            this.dgv_outTimeOut.HeaderText = "Out Time";
+            this.dgv_outTimeOut.Name = "dgv_outTimeOut";
+            // 
+            // dgv_outInTime
+            // 
+            this.dgv_outInTime.DataPropertyName = "arrive_time";
+            this.dgv_outInTime.HeaderText = "In Time";
+            this.dgv_outInTime.Name = "dgv_outInTime";
+            // 
+            // dgv_outDriverName
+            // 
+            this.dgv_outDriverName.DataPropertyName = "driver_name";
+            this.dgv_outDriverName.HeaderText = "Driver Name";
+            this.dgv_outDriverName.Name = "dgv_outDriverName";
+            // 
+            // dgv_outDriverNumber
+            // 
+            this.dgv_outDriverNumber.DataPropertyName = "driver_contact";
+            this.dgv_outDriverNumber.HeaderText = "Driver Number";
+            this.dgv_outDriverNumber.Name = "dgv_outDriverNumber";
             // 
             // pnl_headerTimeTable
             // 
@@ -280,42 +318,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "In Deliveries";
             // 
-            // dgv_outVehicleNo
+            // timer_timeTable
             // 
-            this.dgv_outVehicleNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_outVehicleNo.DataPropertyName = "vehicle_no";
-            this.dgv_outVehicleNo.HeaderText = "Vehicle No";
-            this.dgv_outVehicleNo.Name = "dgv_outVehicleNo";
-            // 
-            // dgv_outDestination
-            // 
-            this.dgv_outDestination.DataPropertyName = "destination";
-            this.dgv_outDestination.HeaderText = "Destination";
-            this.dgv_outDestination.Name = "dgv_outDestination";
-            // 
-            // dgv_outTimeOut
-            // 
-            this.dgv_outTimeOut.DataPropertyName = "leave_time";
-            this.dgv_outTimeOut.HeaderText = "Out Time";
-            this.dgv_outTimeOut.Name = "dgv_outTimeOut";
-            // 
-            // dgv_outInTime
-            // 
-            this.dgv_outInTime.DataPropertyName = "arrive_time";
-            this.dgv_outInTime.HeaderText = "In Time";
-            this.dgv_outInTime.Name = "dgv_outInTime";
-            // 
-            // dgv_outDriverName
-            // 
-            this.dgv_outDriverName.DataPropertyName = "driver_name";
-            this.dgv_outDriverName.HeaderText = "Driver Name";
-            this.dgv_outDriverName.Name = "dgv_outDriverName";
-            // 
-            // dgv_outDriverNumber
-            // 
-            this.dgv_outDriverNumber.DataPropertyName = "driver_contact";
-            this.dgv_outDriverNumber.HeaderText = "Driver Number";
-            this.dgv_outDriverNumber.Name = "dgv_outDriverNumber";
+            this.timer_timeTable.Enabled = true;
+            this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
             // 
             // frm_display
             // 
@@ -330,6 +336,7 @@
             this.Controls.Add(this.pnl_headerTimeTable);
             this.Name = "frm_display";
             this.Text = "LOMDROMAT";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_display_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayOut)).EndInit();
@@ -366,6 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outInTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outDriverName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outDriverNumber;
+        private System.Windows.Forms.Timer timer_timeTable;
     }
 }
 

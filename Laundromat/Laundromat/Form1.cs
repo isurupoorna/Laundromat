@@ -29,6 +29,11 @@ namespace Laundromat
 
         private void frm_display_Load(object sender, EventArgs e)
         {
+            Timer timer = new Timer();
+            timer.Interval = (30 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
             try
             {
                 con = new SqlConnection("Data Source=DESKTOP-3V2I63M;Initial Catalog=londromat;Integrated Security=True");
@@ -46,9 +51,22 @@ namespace Laundromat
             }
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            //refresh here...
+        }
+
         private void dataGridView_displayOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void timer_timeTable_Tick(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dataGridView_displayOut.Rows)
+            {
+                
+            }
         }
     }
 }

@@ -40,13 +40,13 @@
             this.btn_mainUser = new System.Windows.Forms.Button();
             this.btn_mainVehicle = new System.Windows.Forms.Button();
             this.btn_mainDriver = new System.Windows.Forms.Button();
-            this.uc_report1 = new Laundromat.uc_report();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.driverDetails1 = new Laundromat.driverDetails();
+            this.uc_report1 = new Laundromat.uc_report();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -221,16 +221,6 @@
             this.btn_mainDriver.MouseLeave += new System.EventHandler(this.btn_mainDriver_MouseLeave);
             this.btn_mainDriver.MouseHover += new System.EventHandler(this.btn_mainDriver_MouseHover);
             // 
-            // uc_report1
-            // 
-            this.uc_report1.AutoSize = true;
-            this.uc_report1.BackColor = System.Drawing.Color.White;
-            this.uc_report1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_report1.Location = new System.Drawing.Point(300, 0);
-            this.uc_report1.Name = "uc_report1";
-            this.uc_report1.Size = new System.Drawing.Size(1033, 776);
-            this.uc_report1.TabIndex = 2;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -300,6 +290,16 @@
             this.driverDetails1.TabIndex = 5;
             this.driverDetails1.Load += new System.EventHandler(this.driverDetails1_Load);
             // 
+            // uc_report1
+            // 
+            this.uc_report1.AutoSize = true;
+            this.uc_report1.BackColor = System.Drawing.Color.White;
+            this.uc_report1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_report1.Location = new System.Drawing.Point(300, 0);
+            this.uc_report1.Name = "uc_report1";
+            this.uc_report1.Size = new System.Drawing.Size(1033, 776);
+            this.uc_report1.TabIndex = 2;
+            // 
             // adminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,6 +311,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "adminHome";
             this.Text = "adminHome";
+            this.TopMost = true;
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

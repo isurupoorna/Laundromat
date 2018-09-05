@@ -16,7 +16,7 @@ namespace Laundromat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_display());
+            Application.Run(new Operator_Home());
         }
     }
 }

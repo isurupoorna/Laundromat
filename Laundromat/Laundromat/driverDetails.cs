@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MetroFramework;
 namespace Laundromat
 {
     public partial class driverDetails : UserControl
@@ -32,6 +32,11 @@ namespace Laundromat
         {
             btn_driverSearch.Visible = false;
             btn_driverDelete.Visible = false;
+        }
+
+        private void btn_driverSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
