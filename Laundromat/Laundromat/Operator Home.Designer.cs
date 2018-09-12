@@ -40,18 +40,6 @@
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_opertorTime = new System.Windows.Forms.Label();
             this.dataGridView_operatorOut = new System.Windows.Forms.DataGridView();
-            this.timer_operatorTime = new System.Windows.Forms.Timer(this.components);
-            this.dataGridView_operatorIn = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
             this.dgv_operatorOutRoot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_operatorOutVehicleNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgv_operatorOutDriverName = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -60,6 +48,19 @@
             this.dgv_operatorOutTimeIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_operatorOutDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_operatorOutConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.timer_operatorTime = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView_operatorIn = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorInConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnl_headerOperatorHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorIn)).BeginInit();
@@ -164,118 +165,10 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_operatorOut.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_operatorOut.RowTemplate.Height = 24;
-            this.dataGridView_operatorOut.Size = new System.Drawing.Size(1650, 436);
+            this.dataGridView_operatorOut.Size = new System.Drawing.Size(1650, 470);
             this.dataGridView_operatorOut.TabIndex = 1;
             this.dataGridView_operatorOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorOut_CellContentClick);
-            // 
-            // timer_operatorTime
-            // 
-            this.timer_operatorTime.Enabled = true;
-            this.timer_operatorTime.Interval = 10;
-            this.timer_operatorTime.Tick += new System.EventHandler(this.timer_operatorTime_Tick);
-            // 
-            // dataGridView_operatorIn
-            // 
-            this.dataGridView_operatorIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_operatorIn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView_operatorIn.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_operatorIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView_operatorIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_operatorIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewButtonColumn1});
-            this.dataGridView_operatorIn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView_operatorIn.Location = new System.Drawing.Point(0, 620);
-            this.dataGridView_operatorIn.Name = "dataGridView_operatorIn";
-            this.dataGridView_operatorIn.RowHeadersVisible = false;
-            this.dataGridView_operatorIn.RowTemplate.Height = 24;
-            this.dataGridView_operatorIn.Size = new System.Drawing.Size(1650, 435);
-            this.dataGridView_operatorIn.TabIndex = 1;
-            this.dataGridView_operatorIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorIn_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Vehicle No";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Driver";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Destination";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Out Time";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "In Time";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Driver Number";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.DataPropertyName = "dgv_operatorOutConfirm";
-            this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewButtonColumn1.HeaderText = "Confirm";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewButtonColumn1.Text = "Confirm";
-            this.dataGridViewButtonColumn1.ToolTipText = "Confirm";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Vivaldi", 8.25F);
-            this.panel1.Location = new System.Drawing.Point(0, 494);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1650, 126);
-            this.panel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "In Deleveries";
-            // 
-            // timer_operatorTimeTable
-            // 
-            this.timer_operatorTimeTable.Enabled = true;
-            this.timer_operatorTimeTable.Interval = 1000;
-            this.timer_operatorTimeTable.Tick += new System.EventHandler(this.timer_operatorTimeTable_Tick);
+            this.dataGridView_operatorOut.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_operatorOut_EditingControlShowing);
             // 
             // dgv_operatorOutRoot
             // 
@@ -335,6 +228,128 @@
             this.dgv_operatorOutConfirm.ToolTipText = "Confirm";
             this.dgv_operatorOutConfirm.UseColumnTextForButtonValue = true;
             // 
+            // timer_operatorTime
+            // 
+            this.timer_operatorTime.Enabled = true;
+            this.timer_operatorTime.Interval = 10;
+            this.timer_operatorTime.Tick += new System.EventHandler(this.timer_operatorTime_Tick);
+            // 
+            // dataGridView_operatorIn
+            // 
+            this.dataGridView_operatorIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_operatorIn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView_operatorIn.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_operatorIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView_operatorIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_operatorIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dgv_operatorInConfirm});
+            this.dataGridView_operatorIn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_operatorIn.Location = new System.Drawing.Point(0, 642);
+            this.dataGridView_operatorIn.Name = "dataGridView_operatorIn";
+            this.dataGridView_operatorIn.RowHeadersVisible = false;
+            this.dataGridView_operatorIn.RowTemplate.Height = 24;
+            this.dataGridView_operatorIn.Size = new System.Drawing.Size(1650, 413);
+            this.dataGridView_operatorIn.TabIndex = 1;
+            this.dataGridView_operatorIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorIn_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Vivaldi", 8.25F);
+            this.panel1.Location = new System.Drawing.Point(0, 528);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1650, 114);
+            this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(25, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "In Deleveries";
+            // 
+            // timer_operatorTimeTable
+            // 
+            this.timer_operatorTimeTable.Enabled = true;
+            this.timer_operatorTimeTable.Interval = 1000;
+            this.timer_operatorTimeTable.Tick += new System.EventHandler(this.timer_operatorTimeTable_Tick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "root_id";
+            this.Column1.HeaderText = "Root Number";
+            this.Column1.Name = "Column1";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "vehicle_no";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Vehicle No";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "driver_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Driver";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "destination";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Destination";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "leave_time";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Out Time";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "arrive_time";
+            this.dataGridViewTextBoxColumn5.HeaderText = "In Time";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "driver_contact";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Driver Number";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dgv_operatorInConfirm
+            // 
+            this.dgv_operatorInConfirm.DataPropertyName = "dgv_operatorInConfirm";
+            this.dgv_operatorInConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dgv_operatorInConfirm.HeaderText = "Confirm";
+            this.dgv_operatorInConfirm.Name = "dgv_operatorInConfirm";
+            this.dgv_operatorInConfirm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_operatorInConfirm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgv_operatorInConfirm.Text = "Confirm";
+            this.dgv_operatorInConfirm.ToolTipText = "Confirm";
+            this.dgv_operatorInConfirm.UseColumnTextForButtonValue = true;
+            // 
             // Operator_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,6 +362,7 @@
             this.Controls.Add(this.pnl_headerOperatorHome);
             this.Name = "Operator_Home";
             this.Text = "Operator_Home";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Operator_Home_Load);
             this.pnl_headerOperatorHome.ResumeLayout(false);
@@ -372,13 +388,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer_operatorTimeTable;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutRoot;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutVehicleNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutDriverName;
@@ -387,5 +396,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDriverNumber;
         private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorOutConfirm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorInConfirm;
     }
 }
