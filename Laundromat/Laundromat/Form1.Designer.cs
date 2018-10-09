@@ -48,16 +48,16 @@
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_timeTableTime = new System.Windows.Forms.Label();
             this.dataGridView_displayIn = new System.Windows.Forms.DataGridView();
-            this.timer_timeTableSystemTime = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer_timeTable = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer_timeTableSystemTime = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer_timeTable = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayOut)).BeginInit();
             this.pnl_headerTimeTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayIn)).BeginInit();
@@ -123,7 +123,7 @@
             this.dataGridView_displayOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_displayOut.RowHeadersVisible = false;
             this.dataGridView_displayOut.RowTemplate.Height = 24;
-            this.dataGridView_displayOut.Size = new System.Drawing.Size(1104, 440);
+            this.dataGridView_displayOut.Size = new System.Drawing.Size(1104, 373);
             this.dataGridView_displayOut.TabIndex = 0;
             this.dataGridView_displayOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_displayOut_CellContentClick);
             // 
@@ -244,7 +244,7 @@
             this.dataGridView_displayIn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView_displayIn.EnableHeadersVisualStyles = false;
             this.dataGridView_displayIn.GridColor = System.Drawing.Color.White;
-            this.dataGridView_displayIn.Location = new System.Drawing.Point(0, 504);
+            this.dataGridView_displayIn.Location = new System.Drawing.Point(0, 546);
             this.dataGridView_displayIn.Name = "dataGridView_displayIn";
             this.dataGridView_displayIn.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -257,40 +257,8 @@
             this.dataGridView_displayIn.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_displayIn.RowHeadersVisible = false;
             this.dataGridView_displayIn.RowTemplate.Height = 24;
-            this.dataGridView_displayIn.Size = new System.Drawing.Size(1104, 426);
+            this.dataGridView_displayIn.Size = new System.Drawing.Size(1104, 329);
             this.dataGridView_displayIn.TabIndex = 2;
-            // 
-            // timer_timeTableSystemTime
-            // 
-            this.timer_timeTableSystemTime.Enabled = true;
-            this.timer_timeTableSystemTime.Interval = 10;
-            this.timer_timeTableSystemTime.Tick += new System.EventHandler(this.timer_timeTableSystemTime_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 498);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 6);
-            this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "In Deliveries";
-            // 
-            // timer_timeTable
-            // 
-            this.timer_timeTable.Enabled = true;
-            this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -329,12 +297,44 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Driver Number";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
+            // timer_timeTableSystemTime
+            // 
+            this.timer_timeTableSystemTime.Enabled = true;
+            this.timer_timeTableSystemTime.Interval = 10;
+            this.timer_timeTableSystemTime.Tick += new System.EventHandler(this.timer_timeTableSystemTime_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 431);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1104, 115);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "In Deliveries";
+            // 
+            // timer_timeTable
+            // 
+            this.timer_timeTable.Enabled = true;
+            this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
+            // 
             // frm_display
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1104, 930);
+            this.ClientSize = new System.Drawing.Size(1104, 875);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView_displayIn);
             this.Controls.Add(this.dataGridView_displayOut);

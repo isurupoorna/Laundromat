@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_user = new System.Windows.Forms.Panel();
             this.pnl_root = new System.Windows.Forms.Panel();
@@ -45,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_adminTime = new System.Windows.Forms.Label();
+            this.lbl_adminDate = new System.Windows.Forms.Label();
+            this.timer_adminTime = new System.Windows.Forms.Timer(this.components);
+            this.reports1 = new Laundromat.reports();
             this.driverDetails1 = new Laundromat.driverDetails();
             this.uc_report1 = new Laundromat.uc_report();
             this.panel2.SuspendLayout();
@@ -68,7 +73,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 776);
+            this.panel2.Size = new System.Drawing.Size(300, 881);
             this.panel2.TabIndex = 1;
             // 
             // pnl_user
@@ -144,6 +149,7 @@
             this.btn_mainReport.TabIndex = 2;
             this.btn_mainReport.Text = "     Reports";
             this.btn_mainReport.UseVisualStyleBackColor = false;
+            this.btn_mainReport.Click += new System.EventHandler(this.btn_mainReport_Click);
             this.btn_mainReport.MouseLeave += new System.EventHandler(this.btn_mainReport_MouseLeave);
             this.btn_mainReport.MouseHover += new System.EventHandler(this.btn_mainReport_MouseHover);
             // 
@@ -224,6 +230,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.lbl_adminDate);
+            this.panel3.Controls.Add(this.lbl_adminTime);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label3);
@@ -231,7 +239,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(300, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1033, 123);
+            this.panel3.Size = new System.Drawing.Size(1379, 123);
             this.panel3.TabIndex = 4;
             // 
             // label4
@@ -251,7 +259,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(808, 0);
+            this.label1.Location = new System.Drawing.Point(1154, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 33);
             this.label1.TabIndex = 0;
@@ -279,6 +287,39 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Welcome:";
             // 
+            // lbl_adminTime
+            // 
+            this.lbl_adminTime.AutoSize = true;
+            this.lbl_adminTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_adminTime.Location = new System.Drawing.Point(89, 50);
+            this.lbl_adminTime.Name = "lbl_adminTime";
+            this.lbl_adminTime.Size = new System.Drawing.Size(56, 25);
+            this.lbl_adminTime.TabIndex = 2;
+            this.lbl_adminTime.Text = "Time";
+            // 
+            // lbl_adminDate
+            // 
+            this.lbl_adminDate.AutoSize = true;
+            this.lbl_adminDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_adminDate.Location = new System.Drawing.Point(89, 88);
+            this.lbl_adminDate.Name = "lbl_adminDate";
+            this.lbl_adminDate.Size = new System.Drawing.Size(53, 25);
+            this.lbl_adminDate.TabIndex = 3;
+            this.lbl_adminDate.Text = "Date";
+            // 
+            // timer_adminTime
+            // 
+            this.timer_adminTime.Enabled = true;
+            this.timer_adminTime.Tick += new System.EventHandler(this.timer_adminTime_Tick);
+            // 
+            // reports1
+            // 
+            this.reports1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reports1.Location = new System.Drawing.Point(300, 123);
+            this.reports1.Name = "reports1";
+            this.reports1.Size = new System.Drawing.Size(1379, 758);
+            this.reports1.TabIndex = 6;
+            // 
             // driverDetails1
             // 
             this.driverDetails1.BackColor = System.Drawing.Color.White;
@@ -286,9 +327,8 @@
             this.driverDetails1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.driverDetails1.Location = new System.Drawing.Point(300, 123);
             this.driverDetails1.Name = "driverDetails1";
-            this.driverDetails1.Size = new System.Drawing.Size(1033, 653);
+            this.driverDetails1.Size = new System.Drawing.Size(1379, 758);
             this.driverDetails1.TabIndex = 5;
-            this.driverDetails1.Load += new System.EventHandler(this.driverDetails1_Load);
             // 
             // uc_report1
             // 
@@ -297,14 +337,15 @@
             this.uc_report1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_report1.Location = new System.Drawing.Point(300, 0);
             this.uc_report1.Name = "uc_report1";
-            this.uc_report1.Size = new System.Drawing.Size(1033, 776);
+            this.uc_report1.Size = new System.Drawing.Size(1379, 881);
             this.uc_report1.TabIndex = 2;
             // 
             // adminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 776);
+            this.ClientSize = new System.Drawing.Size(1679, 881);
+            this.Controls.Add(this.reports1);
             this.Controls.Add(this.driverDetails1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_report1);
@@ -312,6 +353,7 @@
             this.Name = "adminHome";
             this.Text = "adminHome";
             this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -340,5 +382,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnl_report;
+        private reports reports1;
+        private System.Windows.Forms.Label lbl_adminDate;
+        private System.Windows.Forms.Label lbl_adminTime;
+        private System.Windows.Forms.Timer timer_adminTime;
     }
 }

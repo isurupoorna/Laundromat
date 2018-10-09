@@ -16,7 +16,10 @@ namespace Laundromat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_display());
+            Application.Run(new adminHome());
+
+            
         }
+        public static string server = "Data Source=DESKTOP-3V2I63M;Initial Catalog=londromat;Integrated Security=True";
     }
 }

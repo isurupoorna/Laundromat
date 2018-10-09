@@ -50,9 +50,6 @@
             this.dgv_operatorOutConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
             this.timer_operatorTime = new System.Windows.Forms.Timer(this.components);
             this.dataGridView_operatorIn = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +58,10 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_operatorInConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
+            this.timer_sound = new System.Windows.Forms.Timer(this.components);
             this.pnl_headerOperatorHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorIn)).BeginInit();
@@ -77,7 +78,7 @@
             this.pnl_headerOperatorHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_headerOperatorHome.Location = new System.Drawing.Point(0, 0);
             this.pnl_headerOperatorHome.Name = "pnl_headerOperatorHome";
-            this.pnl_headerOperatorHome.Size = new System.Drawing.Size(1650, 58);
+            this.pnl_headerOperatorHome.Size = new System.Drawing.Size(1604, 58);
             this.pnl_headerOperatorHome.TabIndex = 0;
             // 
             // label3
@@ -165,7 +166,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_operatorOut.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_operatorOut.RowTemplate.Height = 24;
-            this.dataGridView_operatorOut.Size = new System.Drawing.Size(1650, 470);
+            this.dataGridView_operatorOut.Size = new System.Drawing.Size(1604, 473);
             this.dataGridView_operatorOut.TabIndex = 1;
             this.dataGridView_operatorOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorOut_CellContentClick);
             this.dataGridView_operatorOut.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_operatorOut_EditingControlShowing);
@@ -258,41 +259,13 @@
             this.dataGridViewTextBoxColumn6,
             this.dgv_operatorInConfirm});
             this.dataGridView_operatorIn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView_operatorIn.Location = new System.Drawing.Point(0, 642);
+            this.dataGridView_operatorIn.Location = new System.Drawing.Point(0, 514);
             this.dataGridView_operatorIn.Name = "dataGridView_operatorIn";
             this.dataGridView_operatorIn.RowHeadersVisible = false;
             this.dataGridView_operatorIn.RowTemplate.Height = 24;
-            this.dataGridView_operatorIn.Size = new System.Drawing.Size(1650, 413);
+            this.dataGridView_operatorIn.Size = new System.Drawing.Size(1604, 361);
             this.dataGridView_operatorIn.TabIndex = 1;
             this.dataGridView_operatorIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorIn_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Vivaldi", 8.25F);
-            this.panel1.Location = new System.Drawing.Point(0, 528);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1650, 114);
-            this.panel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "In Deleveries";
-            // 
-            // timer_operatorTimeTable
-            // 
-            this.timer_operatorTimeTable.Enabled = true;
-            this.timer_operatorTimeTable.Interval = 1000;
-            this.timer_operatorTimeTable.Tick += new System.EventHandler(this.timer_operatorTimeTable_Tick);
             // 
             // Column1
             // 
@@ -350,12 +323,46 @@
             this.dgv_operatorInConfirm.ToolTipText = "Confirm";
             this.dgv_operatorInConfirm.UseColumnTextForButtonValue = true;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Vivaldi", 8.25F);
+            this.panel1.Location = new System.Drawing.Point(0, 531);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1604, 0);
+            this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(25, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "In Deleveries";
+            // 
+            // timer_operatorTimeTable
+            // 
+            this.timer_operatorTimeTable.Enabled = true;
+            this.timer_operatorTimeTable.Interval = 1000;
+            this.timer_operatorTimeTable.Tick += new System.EventHandler(this.timer_operatorTimeTable_Tick);
+            // 
+            // timer_sound
+            // 
+            this.timer_sound.Enabled = true;
+            this.timer_sound.Interval = 1000;
+            this.timer_sound.Tick += new System.EventHandler(this.timer_sound_Tick);
+            // 
             // Operator_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1650, 1055);
+            this.ClientSize = new System.Drawing.Size(1604, 875);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView_operatorIn);
             this.Controls.Add(this.dataGridView_operatorOut);
@@ -404,5 +411,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorInConfirm;
+        private System.Windows.Forms.Timer timer_sound;
     }
 }
