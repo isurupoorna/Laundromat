@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Laundromat
 {
@@ -20,6 +21,7 @@ namespace Laundromat
 
             
         }
+        public static string serverIp = ConfigurationManager.AppSettings["serverIp"];
         public static string server = "Data Source=DESKTOP-3V2I63M;Initial Catalog=londromat;Integrated Security=True";
     }
 }

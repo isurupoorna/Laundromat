@@ -127,6 +127,9 @@
   <data name="download_fileedit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_fileedit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="download (3)(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download (3)(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="download_usersadd1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_usersadd1 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,20 +145,32 @@
   <data name="truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WhatsApp Image 2018-10-15 at 10.13.15 AM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhatsApp Image 2018-10-15 at 10.13.15 AM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="roadmap2(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roadmap2(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="admin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="indexdiverh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\indexdiverh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beep.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="download_usersadd1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_usersadd1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="indexwhitenew(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\indexwhitenew(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\admin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download_road" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +181,7 @@
   <data name="509406-200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\509406-200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download (3)(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download (3)(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="beep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beep.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shutdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

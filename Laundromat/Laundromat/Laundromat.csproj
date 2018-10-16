@@ -36,6 +36,8 @@
       <HintPath>..\..\..\todohub\MetroUI\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,17 +57,23 @@
       <DependentUpon>adminHome.cs</DependentUpon>
     </Compile>
     <Compile Include="DataObject.cs" />
-    <Compile Include="driverDetails.cs">
+    <Compile Include="driver.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="driverDetails.Designer.cs">
-      <DependentUpon>driverDetails.cs</DependentUpon>
+    <Compile Include="driver.Designer.cs">
+      <DependentUpon>driver.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -105,14 +113,23 @@
     <Compile Include="uc_report.Designer.cs">
       <DependentUpon>uc_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="adminHome.resx">
       <DependentUpon>adminHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="driverDetails.resx">
-      <DependentUpon>driverDetails.cs</DependentUpon>
+    <EmbeddedResource Include="driver.resx">
+      <DependentUpon>driver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -141,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_report.resx">
       <DependentUpon>uc_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -210,6 +230,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2018-10-15 at 10.13.15 AM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

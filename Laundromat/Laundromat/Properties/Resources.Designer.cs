@@ -101,6 +101,26 @@ namespace Laundromat.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap admin {
+            get {
+                object obj = ResourceManager.GetObject("admin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap admin1 {
+            get {
+                object obj = ResourceManager.GetObject("admin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream beep {
@@ -222,6 +242,16 @@ namespace Laundromat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shutdown {
+            get {
+                object obj = ResourceManager.GetObject("shutdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap truck_shipping_logistic_delivery_transport_supply_vehicle_3941bc31c595862b_512x512 {
             get {
                 object obj = ResourceManager.GetObject("truck-shipping-logistic-delivery-transport-supply-vehicle-3941bc31c595862b-512x51" +
@@ -236,6 +266,16 @@ namespace Laundromat.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2018_10_15_at_10_13_15_AM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2018-10-15 at 10.13.15 AM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

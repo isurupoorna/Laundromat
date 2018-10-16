@@ -25,7 +25,7 @@ namespace Laundromat
         private void btn_mainDriver_Click(object sender, EventArgs e)
         {
             btn_mainDriver.FlatAppearance.BorderColor = Color.Red;
-            driverDetails1.BringToFront();
+            driver1.BringToFront();
             
         }
 
@@ -59,14 +59,9 @@ namespace Laundromat
             pnl_root.Visible = false;
         }
 
-        /*private void driverDetails1_Load(object sender, EventArgs e)
-        {
-
-        }*/
-
         private void btn_mainUser_Click(object sender, EventArgs e)
         {
-
+            user1.BringToFront();
         }
 
         private void btn_mainUser_MouseHover(object sender, EventArgs e)
@@ -98,6 +93,21 @@ namespace Laundromat
         {
             lbl_adminTime.Text = DateTime.Now.ToShortTimeString();
             lbl_adminDate.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void btn_mainRoot_Click(object sender, EventArgs e)
+        {
+            root1.BringToFront();
+        }
+
+        private void btn_mainVehicle_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void root1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

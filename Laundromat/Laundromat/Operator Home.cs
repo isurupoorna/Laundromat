@@ -40,17 +40,13 @@ namespace Laundromat
         {  try
             {
                 string mySqlTimestamp = "2003-12-31";
+                DateTime tm = System.DateTime.Now.Date;
                 DateTime chk = DateTime.Parse(mySqlTimestamp);
                 con.Open();
-                SqlDataAdapter sd = new SqlDataAdapter("select date from tbl_timeTable order by date DESC", con);
-                DataTable t = new DataTable();
-                sd.Fill(t);
-                foreach(DataRow dr in t.Rows)
-                {
-                    mySqlTimestamp = dr[0].ToString();
-                }
-                
-                    if (mySqlTimestamp == DateTime.Now.ToShortDateString())
+                SqlCommand com = new SqlCommand("select date from tbl_timeTable where date = '"+ tm.ToString("yyyy-MM-dd") +"' order by date DESC", con);
+                SqlDataReader dr1;
+                dr1 = com.ExecuteReader();
+                    if (dr1.Read())
                     {
                         checkDate = "false";
 
@@ -80,7 +76,7 @@ namespace Laundromat
                     SqlCommand cmd2 = new SqlCommand();
                     SqlCommand restoreTable = new SqlCommand("update vehicle_root SET status = 'p'",con);
                     restoreTable.ExecuteNonQuery();
-                    SqlDataAdapter sda = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_id,driver_name,driver_contact,status from vehicle_root", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_id,driver_name,driver_contact,status,group_id,group_name from vehicle_root", con);
                     DataTable dTable = new DataTable();
                     sda.Fill(dTable);
 
@@ -98,10 +94,12 @@ namespace Laundromat
                         string drivername = dr[7].ToString();
                         string drivertp = dr[8].ToString();
                         string stsus = dr[9].ToString();
+                        int groupId = Convert.ToInt32(dr[10]);
+                        string groupName = dr[11].ToString();
                         gg1 = Convert.ToDateTime(dr[2].ToString());
                         gg2 = Convert.ToDateTime(dr[4].ToString());
                         string today = DateTime.Now.ToShortDateString();
-                        cmd2 = new SqlCommand("insert into tbl_timeTable(root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_id,driver_name,driver_contact,status,date) values ('" + rootId + "','" + leavePoint + "','" + gg1 + "','" + destination + "','" + gg2 + "','" + vehicle + "','" + driveris + "','" + drivername + "','" + drivertp + "','" + stsus + "','" + today + "')", con);
+                        cmd2 = new SqlCommand("insert into tbl_timeTable(root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_id,driver_name,driver_contact,status,date,group_id,group_name) values ('" + rootId + "','" + leavePoint + "','" + gg1 + "','" + destination + "','" + gg2 + "','" + vehicle + "','" + driveris + "','" + drivername + "','" + drivertp + "','" + stsus + "','" + today + "','"+groupId+"','"+groupName+"')", con);
                         cmd2.ExecuteNonQuery();
                     }
                     con.Close();
@@ -170,10 +168,13 @@ namespace Laundromat
                 if (dataGridView_operatorOut.Columns[e.ColumnIndex].Name == "dgv_operatorOutConfirm")
                 {
                     int index = e.RowIndex;
+                    string sqltime = "09:00:00";
+                    DateTime click = DateTime.Parse(sqltime);
+                    click = Convert.ToDateTime(DateTime.Now.ToString());
                     DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[index];
                     string id = selectedRow.Cells[0].Value.ToString();
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' where root_id = '" + id+"'",con);
+                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' , leave_time = '"+click+"' where root_id = '" + id+"'",con);
                     SqlCommand cmd1 = new SqlCommand("update vehicle_root SET status = 'g' where root_id = '" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     cmd1.ExecuteNonQuery();

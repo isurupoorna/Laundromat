@@ -7,14 +7,137 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Laundromat
 {
     public partial class reports : UserControl
     {
+        SqlConnection con = new SqlConnection(Program.server);
+
         public reports()
         {
             InitializeComponent();
+        }
+
+        private void reports_Load(object sender, EventArgs e)
+        {
+            fillDriver();
+            fillVehicle();
+        }
+
+        private void fillDriver()
+        {
+            try
+            {
+                con.Open();
+                SqlDataReader dr = new SqlCommand("select driver_name from tbl_driverDetails", con).ExecuteReader();
+                while (dr.Read())
+                {
+                    cmb_driver.Items.Add(dr.GetValue(0).ToString());
+                }
+                dr.Close();
+                cmb_driver.Items.Add("All");
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
+
+        private void fillVehicle()
+        {
+            try
+            {
+                con.Open();
+                SqlDataReader dr = new SqlCommand("select vehicle_no from tbl_vehicle", con).ExecuteReader();
+                while (dr.Read())
+                {
+                    cmb_vehicle.Items.Add(dr.GetValue(0).ToString());
+                }
+                dr.Close();
+                cmb_vehicle.Items.Add("All");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_reportView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                if(dateTimePicker_startDate.Value.Date > DateTime.Today)
+                {
+                    MessageBox.Show("erroe");
+                }
+                else if(dateTimePicker_endDate.Value.Date > DateTime.Today)
+                {
+                    MessageBox.Show("erroe");
+                }
+                else if(dateTimePicker_startDate.Value.Date > dateTimePicker_endDate.Value.Date)
+                {
+                    MessageBox.Show("erroe");
+                }
+                else
+                {
+                    if(cmb_driver.Text == "All" )
+                    {
+                        if(cmb_vehicle.Text=="All")
+                        {
+                            con.Open();
+                            SqlDataAdapter asd = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '"+dateTimePicker_startDate.Value.Date+"' and '"+dateTimePicker_endDate.Value.Date+"'", con);
+                            DataTable dt = new DataTable();
+                            asd.Fill(dt);
+                            con.Close();
+                            dataGridView_report.DataSource = dt;
+                        }
+                        else
+                        {
+                            con.Open();
+                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '" + dateTimePicker_startDate.Value.Date + "' and '" + dateTimePicker_endDate.Value.Date + "' and  vehicle_no = '" + cmb_vehicle.Text+"' ", con);
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+                            con.Close();
+                            dataGridView_report.DataSource = dt;
+                        }
+                        
+                    }
+                    else
+                    {
+                        if(cmb_vehicle.Text=="All")
+                        {
+                            con.Open();
+                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '2018-10-14' and '2018-10-14' and driver_name = '"+cmb_driver.Text+"'", con);
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+                            con.Close();
+                            dataGridView_report.DataSource = dt;
+                        }
+                        else
+                        {
+                            con.Open();
+                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '2018-10-14' and '2018-10-14' and driver_name = '"+cmb_driver.Text+"' and vehicle_no = '"+cmb_vehicle.Text+"'", con);
+                            DataTable dt = new DataTable();
+                            sda.Fill(dt);
+                            con.Close();
+                            dataGridView_report.DataSource = dt;
+                        }
+                        
+                    }
+
+                   
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

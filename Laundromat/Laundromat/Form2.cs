@@ -9,14 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Laundromat
 {
-    public partial class login : Form
+    public partial class adminLogin : Form
     {
         SqlConnection con = new SqlConnection(Program.server);
-
-        public login()
+        public adminLogin()
         {
             InitializeComponent();
         }
@@ -26,28 +24,28 @@ namespace Laundromat
             Application.Exit();
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void btn_loginAdmin_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txt_userName.Text))
+            if (string.IsNullOrEmpty(txt_adminUserName.Text))
             {
-                errorProvider_userName.SetError(txt_userName, "User Name Required");
+                errorProvider_userName.SetError(txt_adminUserName, "User Name Required");
             }
-            else if(string.IsNullOrEmpty(txt_password.Text))
+            else if (string.IsNullOrEmpty(txt_adminPassword.Text))
             {
-                errorProvider_password.SetError(txt_password, "Password Required");
+                errorProvider_password.SetError(txt_adminPassword, "Password Required");
             }
             else
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select user_name,password,user_type from tbl_logIn where user_name = '" + txt_userName.Text + "' and password = '" + txt_password.Text + "' and user_type = 'user'", con);
+                SqlCommand cmd = new SqlCommand("select user_name,password from tbl_logIn where user_name = '" + txt_adminUserName.Text + "' and password = '" + txt_adminPassword.Text + "' and user_type = 'admin'", con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
-                    this.Hide();
-                    Operator_Home oh = new Operator_Home();
-                    oh.ShowDialog();
+                    adminHome ah = new adminHome();
+                    this.Close();
+                    ah.ShowDialog();
                 }
                 else
                 {
@@ -55,14 +53,6 @@ namespace Laundromat
                 }
                 con.Close();
             }
-        }
-
-        private void btn_admin_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            adminLogin ad = new adminLogin();
-            ad.ShowDialog();
-            
         }
     }
 }

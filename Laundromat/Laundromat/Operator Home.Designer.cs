@@ -40,14 +40,6 @@
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_opertorTime = new System.Windows.Forms.Label();
             this.dataGridView_operatorOut = new System.Windows.Forms.DataGridView();
-            this.dgv_operatorOutRoot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_operatorOutVehicleNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_operatorOutDriverName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgv_operatorOutDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_operatorOutTimeOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_operatorOutTimeIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_operatorOutDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_operatorOutConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
             this.timer_operatorTime = new System.Windows.Forms.Timer(this.components);
             this.dataGridView_operatorIn = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +54,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer_operatorTimeTable = new System.Windows.Forms.Timer(this.components);
             this.timer_sound = new System.Windows.Forms.Timer(this.components);
+            this.dgv_operatorOutRoot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorOutVehicleNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_operatorOutDriverName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgv_operatorOutDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorOutTimeOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorOutTimeIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorOutDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_operatorOutConfirm = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnl_headerOperatorHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_operatorIn)).BeginInit();
@@ -170,64 +170,6 @@
             this.dataGridView_operatorOut.TabIndex = 1;
             this.dataGridView_operatorOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_operatorOut_CellContentClick);
             this.dataGridView_operatorOut.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_operatorOut_EditingControlShowing);
-            // 
-            // dgv_operatorOutRoot
-            // 
-            this.dgv_operatorOutRoot.DataPropertyName = "root_id";
-            this.dgv_operatorOutRoot.HeaderText = "Root Number";
-            this.dgv_operatorOutRoot.Name = "dgv_operatorOutRoot";
-            // 
-            // dgv_operatorOutVehicleNo
-            // 
-            this.dgv_operatorOutVehicleNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dgv_operatorOutVehicleNo.HeaderText = "Vehicle No";
-            this.dgv_operatorOutVehicleNo.Name = "dgv_operatorOutVehicleNo";
-            this.dgv_operatorOutVehicleNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_operatorOutVehicleNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dgv_operatorOutDriverName
-            // 
-            this.dgv_operatorOutDriverName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dgv_operatorOutDriverName.HeaderText = "Driver";
-            this.dgv_operatorOutDriverName.Name = "dgv_operatorOutDriverName";
-            this.dgv_operatorOutDriverName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_operatorOutDriverName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dgv_operatorOutDestination
-            // 
-            this.dgv_operatorOutDestination.DataPropertyName = "destination";
-            this.dgv_operatorOutDestination.HeaderText = "Destination";
-            this.dgv_operatorOutDestination.Name = "dgv_operatorOutDestination";
-            // 
-            // dgv_operatorOutTimeOut
-            // 
-            this.dgv_operatorOutTimeOut.DataPropertyName = "leave_time";
-            this.dgv_operatorOutTimeOut.HeaderText = "Out Time";
-            this.dgv_operatorOutTimeOut.Name = "dgv_operatorOutTimeOut";
-            // 
-            // dgv_operatorOutTimeIn
-            // 
-            this.dgv_operatorOutTimeIn.DataPropertyName = "arrive_time";
-            this.dgv_operatorOutTimeIn.HeaderText = "In Time";
-            this.dgv_operatorOutTimeIn.Name = "dgv_operatorOutTimeIn";
-            // 
-            // dgv_operatorOutDriverNumber
-            // 
-            this.dgv_operatorOutDriverNumber.DataPropertyName = "driver_contact";
-            this.dgv_operatorOutDriverNumber.HeaderText = "Driver Number";
-            this.dgv_operatorOutDriverNumber.Name = "dgv_operatorOutDriverNumber";
-            // 
-            // dgv_operatorOutConfirm
-            // 
-            this.dgv_operatorOutConfirm.DataPropertyName = "dgv_operatorOutConfirm";
-            this.dgv_operatorOutConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dgv_operatorOutConfirm.HeaderText = "Confirm";
-            this.dgv_operatorOutConfirm.Name = "dgv_operatorOutConfirm";
-            this.dgv_operatorOutConfirm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_operatorOutConfirm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgv_operatorOutConfirm.Text = "Confirm";
-            this.dgv_operatorOutConfirm.ToolTipText = "Confirm";
-            this.dgv_operatorOutConfirm.UseColumnTextForButtonValue = true;
             // 
             // timer_operatorTime
             // 
@@ -357,6 +299,64 @@
             this.timer_sound.Interval = 1000;
             this.timer_sound.Tick += new System.EventHandler(this.timer_sound_Tick);
             // 
+            // dgv_operatorOutRoot
+            // 
+            this.dgv_operatorOutRoot.DataPropertyName = "group_id";
+            this.dgv_operatorOutRoot.HeaderText = "Root Number";
+            this.dgv_operatorOutRoot.Name = "dgv_operatorOutRoot";
+            // 
+            // dgv_operatorOutVehicleNo
+            // 
+            this.dgv_operatorOutVehicleNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dgv_operatorOutVehicleNo.HeaderText = "Vehicle No";
+            this.dgv_operatorOutVehicleNo.Name = "dgv_operatorOutVehicleNo";
+            this.dgv_operatorOutVehicleNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_operatorOutVehicleNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgv_operatorOutDriverName
+            // 
+            this.dgv_operatorOutDriverName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dgv_operatorOutDriverName.HeaderText = "Driver";
+            this.dgv_operatorOutDriverName.Name = "dgv_operatorOutDriverName";
+            this.dgv_operatorOutDriverName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_operatorOutDriverName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dgv_operatorOutDestination
+            // 
+            this.dgv_operatorOutDestination.DataPropertyName = "destination";
+            this.dgv_operatorOutDestination.HeaderText = "Destination";
+            this.dgv_operatorOutDestination.Name = "dgv_operatorOutDestination";
+            // 
+            // dgv_operatorOutTimeOut
+            // 
+            this.dgv_operatorOutTimeOut.DataPropertyName = "leave_time";
+            this.dgv_operatorOutTimeOut.HeaderText = "Out Time";
+            this.dgv_operatorOutTimeOut.Name = "dgv_operatorOutTimeOut";
+            // 
+            // dgv_operatorOutTimeIn
+            // 
+            this.dgv_operatorOutTimeIn.DataPropertyName = "arrive_time";
+            this.dgv_operatorOutTimeIn.HeaderText = "In Time";
+            this.dgv_operatorOutTimeIn.Name = "dgv_operatorOutTimeIn";
+            // 
+            // dgv_operatorOutDriverNumber
+            // 
+            this.dgv_operatorOutDriverNumber.DataPropertyName = "driver_contact";
+            this.dgv_operatorOutDriverNumber.HeaderText = "Driver Number";
+            this.dgv_operatorOutDriverNumber.Name = "dgv_operatorOutDriverNumber";
+            // 
+            // dgv_operatorOutConfirm
+            // 
+            this.dgv_operatorOutConfirm.DataPropertyName = "dgv_operatorOutConfirm";
+            this.dgv_operatorOutConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dgv_operatorOutConfirm.HeaderText = "Confirm";
+            this.dgv_operatorOutConfirm.Name = "dgv_operatorOutConfirm";
+            this.dgv_operatorOutConfirm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_operatorOutConfirm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgv_operatorOutConfirm.Text = "Confirm";
+            this.dgv_operatorOutConfirm.ToolTipText = "Confirm";
+            this.dgv_operatorOutConfirm.UseColumnTextForButtonValue = true;
+            // 
             // Operator_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,14 +395,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer_operatorTimeTable;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutRoot;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutVehicleNo;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutDriverName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDestination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDriverNumber;
-        private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorOutConfirm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -412,5 +404,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorInConfirm;
         private System.Windows.Forms.Timer timer_sound;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutRoot;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutVehicleNo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgv_operatorOutDriverName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDestination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDriverNumber;
+        private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorOutConfirm;
     }
 }

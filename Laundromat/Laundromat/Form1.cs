@@ -90,23 +90,23 @@ namespace Laundromat
                 {
                     
                     DateTime leaveTime = DateTime.Parse(sqltime);
-                    leaveTime = Convert.ToDateTime(dataGridView_displayOut.Rows[i].Cells[2].Value.ToString());
+                    leaveTime = Convert.ToDateTime(dataGridView_displayOut.Rows[i].Cells[3].Value.ToString());
                     int q = DateTime.Compare(DateTime.Now, leaveTime);
                     if(q>0)
                     {
                         DataGridViewRow row = dataGridView_displayOut.Rows[i];
-                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.BackColor = Color.Coral;
                     }
                 }
                 for(j=0;j< dataGridView_displayIn.RowCount;j++)
                 {
                     DateTime arivalTime = DateTime.Parse(sqltime);
-                    arivalTime = Convert.ToDateTime(dataGridView_displayIn.Rows[j].Cells[3].Value.ToString());
+                    arivalTime = Convert.ToDateTime(dataGridView_displayIn.Rows[j].Cells[4].Value.ToString());
                     int q = DateTime.Compare(DateTime.Now, arivalTime);
                     if(q>0)
                     {
                         DataGridViewRow row = dataGridView_displayIn.Rows[j];
-                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.BackColor = Color.Coral;
                     }
                 }
             }

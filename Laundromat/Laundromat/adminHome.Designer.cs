@@ -35,22 +35,24 @@
             this.pnl_report = new System.Windows.Forms.Panel();
             this.pnl_driver = new System.Windows.Forms.Panel();
             this.pnl_vehicle = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_adminDate = new System.Windows.Forms.Label();
+            this.lbl_adminTime = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer_adminTime = new System.Windows.Forms.Timer(this.components);
             this.pnl_adminHomeLogo = new System.Windows.Forms.Panel();
             this.btn_mainReport = new System.Windows.Forms.Button();
             this.btn_mainRoot = new System.Windows.Forms.Button();
             this.btn_mainUser = new System.Windows.Forms.Button();
             this.btn_mainVehicle = new System.Windows.Forms.Button();
             this.btn_mainDriver = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_adminTime = new System.Windows.Forms.Label();
-            this.lbl_adminDate = new System.Windows.Forms.Label();
-            this.timer_adminTime = new System.Windows.Forms.Timer(this.components);
+            this.driver1 = new Laundromat.driver();
+            this.user1 = new Laundromat.User();
+            this.root1 = new Laundromat.root();
             this.reports1 = new Laundromat.reports();
-            this.driverDetails1 = new Laundromat.driverDetails();
             this.uc_report1 = new Laundromat.uc_report();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -121,6 +123,91 @@
             this.pnl_vehicle.TabIndex = 4;
             this.pnl_vehicle.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel3.Controls.Add(this.lbl_adminDate);
+            this.panel3.Controls.Add(this.lbl_adminTime);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(300, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1379, 123);
+            this.panel3.TabIndex = 4;
+            // 
+            // lbl_adminDate
+            // 
+            this.lbl_adminDate.AutoSize = true;
+            this.lbl_adminDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_adminDate.Location = new System.Drawing.Point(89, 88);
+            this.lbl_adminDate.Name = "lbl_adminDate";
+            this.lbl_adminDate.Size = new System.Drawing.Size(53, 25);
+            this.lbl_adminDate.TabIndex = 3;
+            this.lbl_adminDate.Text = "Date";
+            // 
+            // lbl_adminTime
+            // 
+            this.lbl_adminTime.AutoSize = true;
+            this.lbl_adminTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_adminTime.Location = new System.Drawing.Point(89, 50);
+            this.lbl_adminTime.Name = "lbl_adminTime";
+            this.lbl_adminTime.Size = new System.Drawing.Size(56, 25);
+            this.lbl_adminTime.TabIndex = 2;
+            this.lbl_adminTime.Text = "Time";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(6, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Date:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label1.Location = new System.Drawing.Point(1154, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Colombo Branch";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(6, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Time:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Welcome:";
+            // 
+            // timer_adminTime
+            // 
+            this.timer_adminTime.Enabled = true;
+            this.timer_adminTime.Tick += new System.EventHandler(this.timer_adminTime_Tick);
+            // 
             // pnl_adminHomeLogo
             // 
             this.pnl_adminHomeLogo.BackgroundImage = global::Laundromat.Properties.Resources.laundromat_2;
@@ -168,6 +255,7 @@
             this.btn_mainRoot.TabIndex = 1;
             this.btn_mainRoot.Text = "     Route";
             this.btn_mainRoot.UseVisualStyleBackColor = false;
+            this.btn_mainRoot.Click += new System.EventHandler(this.btn_mainRoot_Click);
             this.btn_mainRoot.MouseLeave += new System.EventHandler(this.btn_mainRoot_MouseLeave);
             this.btn_mainRoot.MouseHover += new System.EventHandler(this.btn_mainRoot_MouseHover);
             // 
@@ -205,6 +293,7 @@
             this.btn_mainVehicle.TabIndex = 1;
             this.btn_mainVehicle.Text = "     Vehicles";
             this.btn_mainVehicle.UseVisualStyleBackColor = false;
+            this.btn_mainVehicle.Click += new System.EventHandler(this.btn_mainVehicle_Click);
             this.btn_mainVehicle.MouseLeave += new System.EventHandler(this.btn_mainVehicle_MouseLeave);
             this.btn_mainVehicle.MouseHover += new System.EventHandler(this.btn_mainVehicle_MouseHover);
             // 
@@ -227,90 +316,33 @@
             this.btn_mainDriver.MouseLeave += new System.EventHandler(this.btn_mainDriver_MouseLeave);
             this.btn_mainDriver.MouseHover += new System.EventHandler(this.btn_mainDriver_MouseHover);
             // 
-            // panel3
+            // driver1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel3.Controls.Add(this.lbl_adminDate);
-            this.panel3.Controls.Add(this.lbl_adminTime);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(300, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1379, 123);
-            this.panel3.TabIndex = 4;
+            this.driver1.AutoSize = true;
+            this.driver1.BackColor = System.Drawing.Color.White;
+            this.driver1.Location = new System.Drawing.Point(300, 123);
+            this.driver1.Name = "driver1";
+            this.driver1.Size = new System.Drawing.Size(1376, 755);
+            this.driver1.TabIndex = 9;
             // 
-            // label4
+            // user1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(6, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Date:";
+            this.user1.AutoSize = true;
+            this.user1.BackColor = System.Drawing.Color.White;
+            this.user1.Location = new System.Drawing.Point(300, 123);
+            this.user1.Name = "user1";
+            this.user1.Size = new System.Drawing.Size(1391, 755);
+            this.user1.TabIndex = 8;
             // 
-            // label1
+            // root1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(1154, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Colombo Branch";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(6, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Time:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Welcome:";
-            // 
-            // lbl_adminTime
-            // 
-            this.lbl_adminTime.AutoSize = true;
-            this.lbl_adminTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_adminTime.Location = new System.Drawing.Point(89, 50);
-            this.lbl_adminTime.Name = "lbl_adminTime";
-            this.lbl_adminTime.Size = new System.Drawing.Size(56, 25);
-            this.lbl_adminTime.TabIndex = 2;
-            this.lbl_adminTime.Text = "Time";
-            // 
-            // lbl_adminDate
-            // 
-            this.lbl_adminDate.AutoSize = true;
-            this.lbl_adminDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_adminDate.Location = new System.Drawing.Point(89, 88);
-            this.lbl_adminDate.Name = "lbl_adminDate";
-            this.lbl_adminDate.Size = new System.Drawing.Size(53, 25);
-            this.lbl_adminDate.TabIndex = 3;
-            this.lbl_adminDate.Text = "Date";
-            // 
-            // timer_adminTime
-            // 
-            this.timer_adminTime.Enabled = true;
-            this.timer_adminTime.Tick += new System.EventHandler(this.timer_adminTime_Tick);
+            this.root1.BackColor = System.Drawing.Color.White;
+            this.root1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.root1.Location = new System.Drawing.Point(300, 123);
+            this.root1.Name = "root1";
+            this.root1.Size = new System.Drawing.Size(1379, 758);
+            this.root1.TabIndex = 7;
+            this.root1.Load += new System.EventHandler(this.root1_Load);
             // 
             // reports1
             // 
@@ -319,16 +351,6 @@
             this.reports1.Name = "reports1";
             this.reports1.Size = new System.Drawing.Size(1379, 758);
             this.reports1.TabIndex = 6;
-            // 
-            // driverDetails1
-            // 
-            this.driverDetails1.BackColor = System.Drawing.Color.White;
-            this.driverDetails1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.driverDetails1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.driverDetails1.Location = new System.Drawing.Point(300, 123);
-            this.driverDetails1.Name = "driverDetails1";
-            this.driverDetails1.Size = new System.Drawing.Size(1379, 758);
-            this.driverDetails1.TabIndex = 5;
             // 
             // uc_report1
             // 
@@ -345,8 +367,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1679, 881);
+            this.Controls.Add(this.driver1);
+            this.Controls.Add(this.user1);
+            this.Controls.Add(this.root1);
             this.Controls.Add(this.reports1);
-            this.Controls.Add(this.driverDetails1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_report1);
             this.Controls.Add(this.panel2);
@@ -374,7 +398,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private driverDetails driverDetails1;
+        //private driverDetails driverDetails1;
         private System.Windows.Forms.Panel pnl_user;
         private System.Windows.Forms.Panel pnl_root;
         private System.Windows.Forms.Panel pnl_driver;
@@ -386,5 +410,10 @@
         private System.Windows.Forms.Label lbl_adminDate;
         private System.Windows.Forms.Label lbl_adminTime;
         private System.Windows.Forms.Timer timer_adminTime;
+        private root root1;
+        private User user1;
+        private driver driver1;
+        //private driverDetails driverDetails2;
+        //private driverDetails driverDetails3;
     }
 }
