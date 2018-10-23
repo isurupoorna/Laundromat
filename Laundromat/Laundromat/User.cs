@@ -75,14 +75,6 @@ namespace Laundromat
         {
             try
             {
-                if(e.RowIndex >=0)
-                {
-                    DataGridViewRow row = this.dgv_userDetails.Rows[e.RowIndex];
-                    id = Convert.ToInt32(row.Cells[0].Value.ToString());
-                    txt_user.Text = row.Cells[1].Value.ToString();
-                    txt_pass.Text = row.Cells[2].Value.ToString();
-                    cmb_type.Text = row.Cells[3].Value.ToString();
-                }
                 
             }
             catch(Exception ex)

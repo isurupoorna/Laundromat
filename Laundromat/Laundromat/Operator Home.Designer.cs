@@ -301,7 +301,7 @@
             // 
             // dgv_operatorOutRoot
             // 
-            this.dgv_operatorOutRoot.DataPropertyName = "group_id";
+            this.dgv_operatorOutRoot.DataPropertyName = "root_id";
             this.dgv_operatorOutRoot.HeaderText = "Root Number";
             this.dgv_operatorOutRoot.Name = "dgv_operatorOutRoot";
             // 

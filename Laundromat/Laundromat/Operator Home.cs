@@ -32,8 +32,7 @@ namespace Laundromat
             this.lbl_time.Text = nowTime.ToString();
             string sqltime = "09:00:00";
             DateTime start_time = DateTime.Parse(sqltime);
-            start_time = start_time.AddHours(2);
-            
+            start_time = start_time.AddHours(2);            
         }
 
         private void checkDay()
@@ -133,7 +132,7 @@ namespace Laundromat
             dataGridView_operatorOut.DataSource = dt;
             dataGridView_operatorIn.DataSource = dtInDelevers;
             con.Close();
-            fillcombo();
+            
             
 
         }
@@ -150,6 +149,7 @@ namespace Laundromat
                 checkDay();
                 fillDatabase();
                 fillTable();
+                fillcombo();
                 openForm();
             }
             catch(Exception ex)
@@ -232,10 +232,13 @@ namespace Laundromat
                 if (dataGridView_operatorIn.Columns[e.ColumnIndex].Name == "dgv_operatorInConfirm")
                 {
                     int index = e.RowIndex;
+                    string sqltime = "09:00:00";
+                    DateTime click = DateTime.Parse(sqltime);
+                    click = Convert.ToDateTime(DateTime.Now.ToString());
                     DataGridViewRow selectedRow = dataGridView_operatorIn.Rows[index];
                     string id = selectedRow.Cells[0].Value.ToString();
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'f' where root_id = '" + id + "'", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'f' , arrive_time = '"+click+"' where root_id = '" + id + "'", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     dataGridView_operatorIn.Rows.RemoveAt(index);

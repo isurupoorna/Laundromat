@@ -40,6 +40,8 @@
             this.errorProvider_name = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_contact = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider_nic = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_updateDriver = new System.Windows.Forms.Button();
+            this.btn_delDriver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_driverDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_contact)).BeginInit();
@@ -60,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 140);
+            this.label2.Location = new System.Drawing.Point(135, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 24);
             this.label2.TabIndex = 1;
@@ -88,7 +90,7 @@
             // txt_driverContact
             // 
             this.txt_driverContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_driverContact.Location = new System.Drawing.Point(323, 136);
+            this.txt_driverContact.Location = new System.Drawing.Point(323, 140);
             this.txt_driverContact.Name = "txt_driverContact";
             this.txt_driverContact.Size = new System.Drawing.Size(238, 28);
             this.txt_driverContact.TabIndex = 4;
@@ -106,7 +108,7 @@
             this.btn_saveDriver.BackColor = System.Drawing.Color.White;
             this.btn_saveDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveDriver.ForeColor = System.Drawing.Color.Blue;
-            this.btn_saveDriver.Location = new System.Drawing.Point(820, 131);
+            this.btn_saveDriver.Location = new System.Drawing.Point(760, 66);
             this.btn_saveDriver.Name = "btn_saveDriver";
             this.btn_saveDriver.Size = new System.Drawing.Size(117, 38);
             this.btn_saveDriver.TabIndex = 6;
@@ -123,6 +125,8 @@
             this.dgv_driverDetails.RowTemplate.Height = 24;
             this.dgv_driverDetails.Size = new System.Drawing.Size(1030, 323);
             this.dgv_driverDetails.TabIndex = 7;
+            this.dgv_driverDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_driverDetails_CellClick);
+            this.dgv_driverDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_driverDetails_CellContentClick);
             // 
             // errorProvider_name
             // 
@@ -136,12 +140,39 @@
             // 
             this.errorProvider_nic.ContainerControl = this;
             // 
+            // btn_updateDriver
+            // 
+            this.btn_updateDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_updateDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updateDriver.ForeColor = System.Drawing.Color.Blue;
+            this.btn_updateDriver.Location = new System.Drawing.Point(760, 133);
+            this.btn_updateDriver.Name = "btn_updateDriver";
+            this.btn_updateDriver.Size = new System.Drawing.Size(117, 35);
+            this.btn_updateDriver.TabIndex = 8;
+            this.btn_updateDriver.Text = "Update";
+            this.btn_updateDriver.UseVisualStyleBackColor = true;
+            this.btn_updateDriver.Click += new System.EventHandler(this.btn_updateDriver_Click);
+            // 
+            // btn_delDriver
+            // 
+            this.btn_delDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delDriver.ForeColor = System.Drawing.Color.Blue;
+            this.btn_delDriver.Location = new System.Drawing.Point(760, 208);
+            this.btn_delDriver.Name = "btn_delDriver";
+            this.btn_delDriver.Size = new System.Drawing.Size(117, 35);
+            this.btn_delDriver.TabIndex = 9;
+            this.btn_delDriver.Text = "Delete";
+            this.btn_delDriver.UseVisualStyleBackColor = true;
+            // 
             // driver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_delDriver);
+            this.Controls.Add(this.btn_updateDriver);
             this.Controls.Add(this.dgv_driverDetails);
             this.Controls.Add(this.btn_saveDriver);
             this.Controls.Add(this.txt_driverName);
@@ -174,5 +205,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider_name;
         private System.Windows.Forms.ErrorProvider errorProvider_contact;
         private System.Windows.Forms.ErrorProvider errorProvider_nic;
+        private System.Windows.Forms.Button btn_delDriver;
+        private System.Windows.Forms.Button btn_updateDriver;
     }
 }
