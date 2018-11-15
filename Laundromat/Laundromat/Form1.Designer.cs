@@ -51,12 +51,14 @@
             this.dgv_outDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_outTimeOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_outInTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_outGroupLeaveTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_outDriverNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_inGroupArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayOut)).BeginInit();
             this.pnl_headerTimeTable.SuspendLayout();
@@ -101,8 +103,9 @@
             this.dgv_outDestination,
             this.dgv_outTimeOut,
             this.dgv_outInTime,
+            this.dgv_outGroupLeaveTime,
             this.dgv_outDriverNumber});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -148,9 +151,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(79, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 29);
+            this.label2.Size = new System.Drawing.Size(120, 29);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Out Deliveries";
+            this.label2.Text = "Departure";
             // 
             // lbl_time
             // 
@@ -182,7 +185,7 @@
             this.dataGridView_displayIn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView_displayIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_displayIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -197,6 +200,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
+            this.dgv_inGroupArrivalTime,
             this.dataGridViewTextBoxColumn6});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -249,9 +253,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(79, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 29);
+            this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "In Deliveries";
+            this.label1.Text = "Arrivel";
             // 
             // timer_timeTable
             // 
@@ -281,7 +285,7 @@
             // dgv_outTimeOut
             // 
             this.dgv_outTimeOut.DataPropertyName = "leave_time";
-            this.dgv_outTimeOut.HeaderText = "Out Time";
+            this.dgv_outTimeOut.HeaderText = "Expected Time";
             this.dgv_outTimeOut.Name = "dgv_outTimeOut";
             // 
             // dgv_outInTime
@@ -289,6 +293,12 @@
             this.dgv_outInTime.DataPropertyName = "arrive_time";
             this.dgv_outInTime.HeaderText = "In Time";
             this.dgv_outInTime.Name = "dgv_outInTime";
+            // 
+            // dgv_outGroupLeaveTime
+            // 
+            this.dgv_outGroupLeaveTime.DataPropertyName = "gLeave_time";
+            this.dgv_outGroupLeaveTime.HeaderText = "Leave Time";
+            this.dgv_outGroupLeaveTime.Name = "dgv_outGroupLeaveTime";
             // 
             // dgv_outDriverNumber
             // 
@@ -318,7 +328,7 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "leave_time";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Out Time";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Expected Time";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
@@ -326,6 +336,12 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "arrive_time";
             this.dataGridViewTextBoxColumn4.HeaderText = "In Time";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dgv_inGroupArrivalTime
+            // 
+            this.dgv_inGroupArrivalTime.DataPropertyName = "gArrival_time";
+            this.dgv_inGroupArrivalTime.HeaderText = "Arrival Time";
+            this.dgv_inGroupArrivalTime.Name = "dgv_inGroupArrivalTime";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -377,12 +393,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outDestination;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outTimeOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outInTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outGroupLeaveTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_outDriverNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_inGroupArrivalTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

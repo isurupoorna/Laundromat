@@ -22,7 +22,42 @@ namespace Laundromat
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txt_leavePoint.Text))
+            {
 
+            }
+            else if(string.IsNullOrEmpty(txt_arrivalPoint.Text))
+            {
+
+            }
+            else if(string.IsNullOrEmpty(txt_groupId.Text))
+            {
+
+            }
+            else if(dateTimePicker_leaving.Value < dateTimePicker_arrival.Value)
+            {
+
+            }
+            else if(string.IsNullOrEmpty(txt_groupName.Text))
+            {
+
+            }
+            else if(cmb_driver.SelectedIndex<0)
+            {
+
+            }
+            else if(cmb_vehicle.SelectedIndex <0)
+            {
+
+            }
+            else
+            {
+                con.Open();
+
+
+                con.Close();
+                    
+            }
         }
 
         private void fillVehicle()
@@ -77,7 +112,7 @@ namespace Laundromat
             try
             {
                 con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("select * from vehicle_root", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,group_id,group_name from vehicle_root", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgv_root.DataSource = dt;

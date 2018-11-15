@@ -107,6 +107,12 @@
     <Compile Include="uc_editRoot.Designer.cs">
       <DependentUpon>uc_editRoot.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_editVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_editVehicle.Designer.cs">
+      <DependentUpon>uc_editVehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_report.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_editRoot.resx">
       <DependentUpon>uc_editRoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_editVehicle.resx">
+      <DependentUpon>uc_editVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_report.resx">
       <DependentUpon>uc_report.cs</DependentUpon>

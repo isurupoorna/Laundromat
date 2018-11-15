@@ -75,7 +75,13 @@ namespace Laundromat
         {
             try
             {
-                
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dgv_userDetails.Rows[e.RowIndex];
+                    txt_user.Text = row.Cells[1].Value.ToString();
+                    txt_pass.Text = row.Cells[2].Value.ToString();
+                    cmb_type.Text = row.Cells[3].Value.ToString();
+                }
             }
             catch(Exception ex)
             {
@@ -106,6 +112,25 @@ namespace Laundromat
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void dgv_userDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+            txt_pass.Text = "";
+            txt_user.Text = "";
+            cmb_type.Text = "";
         }
     }
 }

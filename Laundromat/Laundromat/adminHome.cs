@@ -102,7 +102,7 @@ namespace Laundromat
 
         private void btn_mainVehicle_Click(object sender, EventArgs e)
         {
-            
+            uc_editVehicle1.BringToFront();
         }
 
         private void root1_Load(object sender, EventArgs e)

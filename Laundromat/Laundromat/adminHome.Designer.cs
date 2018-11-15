@@ -54,6 +54,7 @@
             this.root1 = new Laundromat.root();
             this.reports1 = new Laundromat.reports();
             this.uc_report1 = new Laundromat.uc_report();
+            this.uc_editVehicle1 = new Laundromat.uc_editVehicle();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -348,6 +349,7 @@
             // 
             // reports1
             // 
+            this.reports1.BackColor = System.Drawing.Color.White;
             this.reports1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reports1.Location = new System.Drawing.Point(300, 123);
             this.reports1.Name = "reports1";
@@ -364,11 +366,20 @@
             this.uc_report1.Size = new System.Drawing.Size(1379, 881);
             this.uc_report1.TabIndex = 2;
             // 
+            // uc_editVehicle1
+            // 
+            this.uc_editVehicle1.BackColor = System.Drawing.Color.White;
+            this.uc_editVehicle1.Location = new System.Drawing.Point(302, 128);
+            this.uc_editVehicle1.Name = "uc_editVehicle1";
+            this.uc_editVehicle1.Size = new System.Drawing.Size(1374, 750);
+            this.uc_editVehicle1.TabIndex = 10;
+            // 
             // adminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1679, 881);
+            this.Controls.Add(this.uc_editVehicle1);
             this.Controls.Add(this.driver1);
             this.Controls.Add(this.user1);
             this.Controls.Add(this.root1);
@@ -415,6 +426,7 @@
         private root root1;
         private User user1;
         private driver driver1;
+        private uc_editVehicle uc_editVehicle1;
         //private driverDetails driverDetails2;
         //private driverDetails driverDetails3;
     }

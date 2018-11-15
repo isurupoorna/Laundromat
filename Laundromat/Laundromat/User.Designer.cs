@@ -107,6 +107,7 @@
             this.dgv_userDetails.Size = new System.Drawing.Size(564, 362);
             this.dgv_userDetails.TabIndex = 6;
             this.dgv_userDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_userDetails_CellClick);
+            this.dgv_userDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_userDetails_CellContentClick);
             // 
             // btn_add
             // 
@@ -148,6 +149,7 @@
             this.Name = "User";
             this.Size = new System.Drawing.Size(1064, 654);
             this.Load += new System.EventHandler(this.User_Load);
+            this.Click += new System.EventHandler(this.User_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_userDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

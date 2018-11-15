@@ -32,8 +32,8 @@ namespace Laundromat
             try
             {              
                 con.Open();
-                SqlDataAdapter sdaOut = new SqlDataAdapter("select * from tbl_timeTable where status = 'p' and date = (SELECT CONVERT (date, GETDATE())) order by leave_time ", con);
-                SqlDataAdapter sdaIn = new SqlDataAdapter("select * from tbl_timeTable where status = 'g' and date = (SELECT CONVERT (date, GETDATE())) order by arrive_time ", con);
+                SqlDataAdapter sdaOut = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,driver_contact , gLeave_time , date from tbl_timeTable , tbl_rootGroup where status = 'p' and date = (SELECT CONVERT (date, GETDATE())) and tbl_timeTable.group_id = tbl_rootGroup.group_id order by leave_time ", con);
+                SqlDataAdapter sdaIn = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,driver_contact , gArrival_time , date from tbl_timeTable , tbl_rootGroup where status = 'p' and date = (SELECT CONVERT (date, GETDATE())) and tbl_timeTable.group_id = tbl_rootGroup.group_id order by arrive_time", con);
                 DataTable dt = new DataTable();
                 DataTable dtIn = new DataTable();
                 sdaOut.Fill(dt);

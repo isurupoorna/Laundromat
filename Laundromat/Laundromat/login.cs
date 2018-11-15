@@ -38,22 +38,39 @@ namespace Laundromat
             }
             else
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("select user_name,password,user_type from tbl_logIn where user_name = '" + txt_userName.Text + "' and password = '" + txt_password.Text + "' and user_type = 'user'", con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if(dt.Rows.Count > 0)
+                try
                 {
-                    this.Hide();
-                    Operator_Home oh = new Operator_Home();
-                    oh.ShowDialog();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select user_name,password,user_type from tbl_logIn where user_name = '" + txt_userName.Text + "' and password = '" + txt_password.Text + "' and user_type = 'user'", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    con.Close();
+                    if (dt.Rows.Count > 0)
+                    {
+                        Program.logedUser = txt_userName.Text;
+                        string sqltime = "09:00:00";
+                        DateTime click = DateTime.Parse(sqltime);
+                        click = Convert.ToDateTime(DateTime.Now.ToString());
+                        con.Open();
+                        SqlCommand cmdl = new SqlCommand("insert into tbl_logedUsers (user_name,login_time,loged_date) values('" + Program.logedUser + "','" + click + "',SYSDATETIME ( ))",con);
+                        cmdl.ExecuteNonQuery();
+                        con.Close();
+                        this.Hide();
+                        Operator_Home oh = new Operator_Home();
+                        oh.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid User Name or Password");
+                    }
+                    
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Invalid User Name or Password");
+                    MessageBox.Show(ex.Message);
                 }
-                con.Close();
+                
             }
         }
 

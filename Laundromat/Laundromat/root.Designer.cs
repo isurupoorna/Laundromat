@@ -28,42 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_leavePoint = new System.Windows.Forms.TextBox();
+            this.txt_arrivalPoint = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_root = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_arrival = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker_leaving = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_groupId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_groupName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmb_vehicle = new System.Windows.Forms.ComboBox();
             this.cmb_driver = new System.Windows.Forms.ComboBox();
+            this.btn_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_root)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_leavePoint
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(284, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 27);
-            this.textBox1.TabIndex = 0;
+            this.txt_leavePoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_leavePoint.Location = new System.Drawing.Point(284, 75);
+            this.txt_leavePoint.Name = "txt_leavePoint";
+            this.txt_leavePoint.Size = new System.Drawing.Size(200, 27);
+            this.txt_leavePoint.TabIndex = 0;
             // 
-            // textBox2
+            // txt_arrivalPoint
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(284, 195);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 27);
-            this.textBox2.TabIndex = 1;
+            this.txt_arrivalPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_arrivalPoint.Location = new System.Drawing.Point(284, 195);
+            this.txt_arrivalPoint.Name = "txt_arrivalPoint";
+            this.txt_arrivalPoint.Size = new System.Drawing.Size(200, 27);
+            this.txt_arrivalPoint.TabIndex = 1;
             // 
             // label1
             // 
@@ -108,6 +109,7 @@
             // dgv_root
             // 
             this.dgv_root.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_root.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_root.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_root.Location = new System.Drawing.Point(24, 390);
             this.dgv_root.Name = "dgv_root";
@@ -117,8 +119,10 @@
             // 
             // btn_add
             // 
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(495, 324);
+            this.btn_add.ForeColor = System.Drawing.Color.Blue;
+            this.btn_add.Location = new System.Drawing.Point(328, 328);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(156, 40);
             this.btn_add.TabIndex = 10;
@@ -126,20 +130,20 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // dateTimePicker1
+            // dateTimePicker_arrival
             // 
-            this.dateTimePicker1.CustomFormat = "HH:mm";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(284, 251);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker_arrival.CustomFormat = "HH:mm:ss";
+            this.dateTimePicker_arrival.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_arrival.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_arrival.Location = new System.Drawing.Point(284, 251);
+            this.dateTimePicker_arrival.Name = "dateTimePicker_arrival";
+            this.dateTimePicker_arrival.ShowUpDown = true;
+            this.dateTimePicker_arrival.Size = new System.Drawing.Size(200, 27);
+            this.dateTimePicker_arrival.TabIndex = 11;
             // 
             // dateTimePicker_leaving
             // 
-            this.dateTimePicker_leaving.CustomFormat = "HH:mm";
+            this.dateTimePicker_leaving.CustomFormat = "HH:mm:ss";
             this.dateTimePicker_leaving.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_leaving.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_leaving.Location = new System.Drawing.Point(284, 134);
@@ -158,13 +162,13 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Group ID";
             // 
-            // textBox3
+            // txt_groupId
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(801, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 27);
-            this.textBox3.TabIndex = 14;
+            this.txt_groupId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_groupId.Location = new System.Drawing.Point(801, 75);
+            this.txt_groupId.Name = "txt_groupId";
+            this.txt_groupId.Size = new System.Drawing.Size(200, 27);
+            this.txt_groupId.TabIndex = 14;
             // 
             // label6
             // 
@@ -176,13 +180,13 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Group Name";
             // 
-            // textBox4
+            // txt_groupName
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(801, 131);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 27);
-            this.textBox4.TabIndex = 16;
+            this.txt_groupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_groupName.Location = new System.Drawing.Point(801, 131);
+            this.txt_groupName.Name = "txt_groupName";
+            this.txt_groupName.Size = new System.Drawing.Size(200, 27);
+            this.txt_groupName.TabIndex = 16;
             // 
             // label7
             // 
@@ -222,29 +226,41 @@
             this.cmb_driver.Size = new System.Drawing.Size(200, 28);
             this.cmb_driver.TabIndex = 20;
             // 
+            // btn_update
+            // 
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.ForeColor = System.Drawing.Color.Blue;
+            this.btn_update.Location = new System.Drawing.Point(569, 328);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(156, 40);
+            this.btn_update.TabIndex = 21;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            // 
             // root
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.cmb_driver);
             this.Controls.Add(this.cmb_vehicle);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_groupName);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_groupId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker_leaving);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker_arrival);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dgv_root);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_arrivalPoint);
+            this.Controls.Add(this.txt_leavePoint);
             this.Name = "root";
             this.Size = new System.Drawing.Size(1379, 758);
             this.Load += new System.EventHandler(this.root_Load);
@@ -256,23 +272,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_leavePoint;
+        private System.Windows.Forms.TextBox txt_arrivalPoint;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgv_root;
         private System.Windows.Forms.Button btn_add;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_arrival;
         private System.Windows.Forms.DateTimePicker dateTimePicker_leaving;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_groupId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_groupName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmb_vehicle;
         private System.Windows.Forms.ComboBox cmb_driver;
+        private System.Windows.Forms.Button btn_update;
     }
 }
