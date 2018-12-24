@@ -52,6 +52,7 @@ namespace Laundromat
                         string sqltime = "09:00:00";
                         DateTime click = DateTime.Parse(sqltime);
                         click = Convert.ToDateTime(DateTime.Now.ToString());
+                        Program.login = click;
                         con.Open();
                         SqlCommand cmdl = new SqlCommand("insert into tbl_logedUsers (user_name,login_time,loged_date) values('" + Program.logedUser + "','" + click + "',SYSDATETIME ( ))",con);
                         cmdl.ExecuteNonQuery();

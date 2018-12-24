@@ -33,7 +33,7 @@ namespace Laundromat
             {              
                 con.Open();
                 SqlDataAdapter sdaOut = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,driver_contact , gLeave_time , date from tbl_timeTable , tbl_rootGroup where status = 'p' and date = (SELECT CONVERT (date, GETDATE())) and tbl_timeTable.group_id = tbl_rootGroup.group_id order by leave_time ", con);
-                SqlDataAdapter sdaIn = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,driver_contact , gArrival_time , date from tbl_timeTable , tbl_rootGroup where status = 'p' and date = (SELECT CONVERT (date, GETDATE())) and tbl_timeTable.group_id = tbl_rootGroup.group_id order by arrive_time", con);
+                SqlDataAdapter sdaIn = new SqlDataAdapter("select root_id,leave_point,leave_time,destination,arrive_time,vehicle_no,driver_name,driver_contact , gArrival_time , date from tbl_timeTable , tbl_rootGroup where status = 'g' and date = (SELECT CONVERT (date, GETDATE())) and tbl_timeTable.group_id = tbl_rootGroup.group_id order by gArrival_time", con);
                 DataTable dt = new DataTable();
                 DataTable dtIn = new DataTable();
                 sdaOut.Fill(dt);
@@ -84,30 +84,43 @@ namespace Laundromat
             try
             {
                 setData();
-                string sqltime = "09:00:00";
+                string sqltime = "00:00:00";
                 int i,j;
                 for (i = 0; i < dataGridView_displayOut.RowCount; i++)
                 {
                     
                     DateTime leaveTime = DateTime.Parse(sqltime);
-                    leaveTime = Convert.ToDateTime(dataGridView_displayOut.Rows[i].Cells[3].Value.ToString());
-                    int q = DateTime.Compare(DateTime.Now, leaveTime);
-                    if(q>0)
+                    leaveTime = Convert.ToDateTime(dataGridView_displayOut.Rows[i].Cells[4].Value.ToString());
+
+                    TimeSpan timeDef = DateTime.Now - leaveTime ;
+                    int tsm = timeDef.Minutes;
+                    
+                    if(tsm> -10 && tsm < 0)
+                    {
+                        DataGridViewRow row = dataGridView_displayOut.Rows[i];
+                        row.DefaultCellStyle.BackColor = Color.Chartreuse;
+                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 24 ,FontStyle.Bold);
+                    }
+                    else if(tsm > 0)
                     {
                         DataGridViewRow row = dataGridView_displayOut.Rows[i];
                         row.DefaultCellStyle.BackColor = Color.Coral;
+                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 18);
                     }
+
                 }
                 for(j=0;j< dataGridView_displayIn.RowCount;j++)
                 {
                     DateTime arivalTime = DateTime.Parse(sqltime);
                     arivalTime = Convert.ToDateTime(dataGridView_displayIn.Rows[j].Cells[4].Value.ToString());
+
                     int q = DateTime.Compare(DateTime.Now, arivalTime);
                     if(q>0)
                     {
                         DataGridViewRow row = dataGridView_displayIn.Rows[j];
                         row.DefaultCellStyle.BackColor = Color.Coral;
                     }
+                    
                 }
             }
             catch (Exception ex)

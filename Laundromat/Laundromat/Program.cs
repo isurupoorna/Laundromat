@@ -17,12 +17,14 @@ namespace Laundromat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new adminHome());
+            Application.Run(new Operator_Home());
 
             
         }
         public static string serverIp = ConfigurationManager.AppSettings["serverIp"];
         public static string server = "Data Source=DESKTOP-3V2I63M;Initial Catalog=londromat;Integrated Security=True";
+
         public static string logedUser = "";
+        public static DateTime login;
     }
 }

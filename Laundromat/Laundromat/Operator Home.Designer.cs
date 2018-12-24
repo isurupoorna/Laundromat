@@ -34,8 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Operator_Home));
             this.pnl_headerOperatorHome = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_opertorTime = new System.Windows.Forms.Label();
@@ -71,7 +72,7 @@
             // pnl_headerOperatorHome
             // 
             this.pnl_headerOperatorHome.BackColor = System.Drawing.Color.Navy;
-            this.pnl_headerOperatorHome.Controls.Add(this.label3);
+            this.pnl_headerOperatorHome.Controls.Add(this.btn_logout);
             this.pnl_headerOperatorHome.Controls.Add(this.label1);
             this.pnl_headerOperatorHome.Controls.Add(this.lbl_time);
             this.pnl_headerOperatorHome.Controls.Add(this.lbl_opertorTime);
@@ -81,14 +82,15 @@
             this.pnl_headerOperatorHome.Size = new System.Drawing.Size(1604, 58);
             this.pnl_headerOperatorHome.TabIndex = 0;
             // 
-            // label3
+            // btn_logout
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(553, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.btn_logout.Location = new System.Drawing.Point(1585, 12);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(108, 34);
+            this.btn_logout.TabIndex = 3;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // label1
             // 
@@ -176,6 +178,7 @@
             this.dgv_operatorOutRoot.DataPropertyName = "root_id";
             this.dgv_operatorOutRoot.HeaderText = "Root Number";
             this.dgv_operatorOutRoot.Name = "dgv_operatorOutRoot";
+            this.dgv_operatorOutRoot.ReadOnly = true;
             // 
             // dgv_operatorOutVehicleNo
             // 
@@ -204,18 +207,21 @@
             this.dgv_operatorOutTimeOut.DataPropertyName = "leave_time";
             this.dgv_operatorOutTimeOut.HeaderText = "Out Time";
             this.dgv_operatorOutTimeOut.Name = "dgv_operatorOutTimeOut";
+            this.dgv_operatorOutTimeOut.ReadOnly = true;
             // 
             // dgv_operatorOutTimeIn
             // 
             this.dgv_operatorOutTimeIn.DataPropertyName = "arrive_time";
             this.dgv_operatorOutTimeIn.HeaderText = "In Time";
             this.dgv_operatorOutTimeIn.Name = "dgv_operatorOutTimeIn";
+            this.dgv_operatorOutTimeIn.ReadOnly = true;
             // 
             // dgv_operatorOutDriverNumber
             // 
             this.dgv_operatorOutDriverNumber.DataPropertyName = "driver_contact";
             this.dgv_operatorOutDriverNumber.HeaderText = "Driver Number";
             this.dgv_operatorOutDriverNumber.Name = "dgv_operatorOutDriverNumber";
+            this.dgv_operatorOutDriverNumber.ReadOnly = true;
             // 
             // dgv_operatorOutConfirm
             // 
@@ -363,10 +369,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1604, 875);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView_operatorIn);
             this.Controls.Add(this.dataGridView_operatorOut);
             this.Controls.Add(this.pnl_headerOperatorHome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Operator_Home";
             this.Text = "Operator_Home";
             this.TopMost = true;
@@ -394,7 +402,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer_operatorTimeTable;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -412,5 +419,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutTimeIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_operatorOutDriverNumber;
         private System.Windows.Forms.DataGridViewButtonColumn dgv_operatorOutConfirm;
+        private System.Windows.Forms.Button btn_logout;
     }
 }

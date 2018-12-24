@@ -20,17 +20,87 @@ namespace Laundromat
             InitializeComponent();
         }
 
-        private void uc_editVehicle_Load(object sender, EventArgs e)
+        private void fillDriver()
         {
             try
             {
                 con.Open();
-                
-                SqlDataAdapter sda = new SqlDataAdapter("select * from tbl_vehicle",con);
+                SqlDataReader dr = new SqlCommand("select driver_name from tbl_driverDetails", con).ExecuteReader();
+                while (dr.Read())
+                {
+                    cmb_driverName.Items.Add(dr.GetValue(0).ToString());
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillGrid()
+        {
+            try
+            {
+                con.Open();
+
+                SqlDataAdapter sda = new SqlDataAdapter("select * from tbl_vehicle", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView_vehicle.DataSource = dt;
                 con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void uc_editVehicle_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                fillDriver();
+                fillGrid();
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_addVehicle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(string.IsNullOrEmpty(txt_vehicleNumber.Text))
+                {
+
+                }
+                if (cmb_driverName.SelectedIndex>0)
+                {
+
+                }
+                else
+                {
+                    //int id;
+                    //con.Open();
+                    //SqlCommand cmd = new SqlCommand("select driver_id from tbl_driverDetails where driver_name='Arul'",con);
+                    //SqlDataReader sda;
+                    //sda = cmd.ExecuteReader();
+                    //while(sda.Read())
+                    //{
+                    //    id = Convert.ToInt32(sda["driver_id"].ToString());
+                    //}
+                    //sda.Close();
+                    //SqlCommand cmdi = new SqlCommand("insert into tbl_vehicle(vehicle_no,driver_id) values('" + txt_vehicleNumber.Text + "',"+100+")", con);
+                    //cmd.ExecuteNonQuery();
+                    //con.Close();
+                    fillGrid();
+                }
             }
             catch(Exception ex)
             {

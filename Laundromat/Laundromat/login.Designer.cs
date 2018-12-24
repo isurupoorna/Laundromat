@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +44,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_admin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_exit = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_userName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_password)).BeginInit();
@@ -59,6 +60,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1250, 84);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.Color.Blue;
+            this.btn_exit.BackgroundImage = global::Laundromat.Properties.Resources.shutdown;
+            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_exit.Location = new System.Drawing.Point(1191, 21);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(34, 33);
+            this.btn_exit.TabIndex = 1;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Laundromat.Properties.Resources.laundromat_2;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(12, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(171, 68);
+            this.panel2.TabIndex = 0;
             // 
             // label1
             // 
@@ -167,27 +189,6 @@
             this.panel3.Size = new System.Drawing.Size(317, 119);
             this.panel3.TabIndex = 1;
             // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.Blue;
-            this.btn_exit.BackgroundImage = global::Laundromat.Properties.Resources.shutdown;
-            this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_exit.Location = new System.Drawing.Point(1191, 21);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(34, 33);
-            this.btn_exit.TabIndex = 1;
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Laundromat.Properties.Resources.laundromat_2;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(12, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(171, 68);
-            this.panel2.TabIndex = 0;
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +206,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";

@@ -15,6 +15,7 @@ namespace Laundromat
     {
         SqlConnection con = new SqlConnection(Program.server);
         int id;
+       
 
         public User()
         {
@@ -37,31 +38,63 @@ namespace Laundromat
 
         }
 
+        private void addUser()
+        {
+            try
+
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("insert into tbl_logIn (user_name,password,user_type) values('" + txt_user.Text + "','" + txt_pass.Text + "','" + cmb_type.Text + "')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                txt_pass.Text = "";
+                txt_user.Text = "";
+                loadUser();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(txt_user.Text))
             {
-                MessageBox.Show("err");
+                MessageBox.Show(" Please Enter Valied User Name ");
             }
             else if(string.IsNullOrEmpty(txt_pass.Text))
             {
-                MessageBox.Show("err");
+                MessageBox.Show("Please Enter Valied Password");
             }
             else if(cmb_type.SelectedIndex<0)
             {
-                MessageBox.Show("err");
+                MessageBox.Show("Please Select User Type");
             }
             else
             {
                 try
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into tbl_logIn (user_name,password,user_type) values('" + txt_user.Text + "','" + txt_pass.Text + "','" + cmb_type.Text + "')", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    txt_pass.Text = "";
-                    txt_user.Text = "";
-                    loadUser();
+                    int i;
+                    string r;
+                    
+                    string name = txt_user.Text;
+                    for(i=0; i<dgv_userDetails.RowCount; i++)
+                    {
+                        r = dgv_userDetails.Rows[i].Cells[1].Value.ToString();
+                        if(r==name)
+                        {
+                            MessageBox.Show("nop");
+                        
+                        }
+                        else
+                        {
+                            
+                            addUser();
+                            break;
+                        }
+                    }
+                    
                 }
                 catch(Exception ex)
                 {
@@ -78,6 +111,7 @@ namespace Laundromat
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow row = this.dgv_userDetails.Rows[e.RowIndex];
+                    id = Convert.ToInt32(row.Cells[0].Value);
                     txt_user.Text = row.Cells[1].Value.ToString();
                     txt_pass.Text = row.Cells[2].Value.ToString();
                     cmb_type.Text = row.Cells[3].Value.ToString();
@@ -95,6 +129,7 @@ namespace Laundromat
             try
             {
                 con.Open();
+                
                 SqlCommand cmd = new SqlCommand("delete from tbl_logIn where user_id = '" + id + "'", con);
                 int x = cmd.ExecuteNonQuery();
                 con.Close();
@@ -103,6 +138,7 @@ namespace Laundromat
                     MessageBox.Show("User Has Successfuly Deleted");
                     txt_pass.Text = "";
                     txt_user.Text = "";
+                    cmb_type.Text = "";
                     loadUser();
                 }
                
@@ -118,7 +154,7 @@ namespace Laundromat
         {
             try
             {
-                
+                id = e.RowIndex;
             }
             catch(Exception ex)
             {

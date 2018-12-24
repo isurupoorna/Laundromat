@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminHome));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnl_user = new System.Windows.Forms.Panel();
             this.pnl_root = new System.Windows.Forms.Panel();
@@ -49,12 +50,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer_adminTime = new System.Windows.Forms.Timer(this.components);
+            this.uc_editVehicle1 = new Laundromat.uc_editVehicle();
             this.driver1 = new Laundromat.driver();
             this.user1 = new Laundromat.User();
             this.root1 = new Laundromat.root();
             this.reports1 = new Laundromat.reports();
             this.uc_report1 = new Laundromat.uc_report();
-            this.uc_editVehicle1 = new Laundromat.uc_editVehicle();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -319,6 +320,15 @@
             this.timer_adminTime.Enabled = true;
             this.timer_adminTime.Tick += new System.EventHandler(this.timer_adminTime_Tick);
             // 
+            // uc_editVehicle1
+            // 
+            this.uc_editVehicle1.AutoSize = true;
+            this.uc_editVehicle1.BackColor = System.Drawing.Color.White;
+            this.uc_editVehicle1.Location = new System.Drawing.Point(302, 128);
+            this.uc_editVehicle1.Name = "uc_editVehicle1";
+            this.uc_editVehicle1.Size = new System.Drawing.Size(1374, 750);
+            this.uc_editVehicle1.TabIndex = 10;
+            // 
             // driver1
             // 
             this.driver1.AutoSize = true;
@@ -366,14 +376,6 @@
             this.uc_report1.Size = new System.Drawing.Size(1379, 881);
             this.uc_report1.TabIndex = 2;
             // 
-            // uc_editVehicle1
-            // 
-            this.uc_editVehicle1.BackColor = System.Drawing.Color.White;
-            this.uc_editVehicle1.Location = new System.Drawing.Point(302, 128);
-            this.uc_editVehicle1.Name = "uc_editVehicle1";
-            this.uc_editVehicle1.Size = new System.Drawing.Size(1374, 750);
-            this.uc_editVehicle1.TabIndex = 10;
-            // 
             // adminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -387,8 +389,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.uc_report1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "adminHome";
-            this.Text = "adminHome";
+            this.Text = "Admin Panal";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);

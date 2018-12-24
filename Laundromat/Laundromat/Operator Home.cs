@@ -35,6 +35,7 @@ namespace Laundromat
             start_time = start_time.AddHours(2);            
         }
 
+        //to check if it is first run of the day
         private void checkDay()
         {  try
             {
@@ -64,6 +65,9 @@ namespace Laundromat
 
         }
 
+
+
+        //copy data from vehicle_root to tbl_time table
         public void fillDatabase()
         {
             try
@@ -116,6 +120,7 @@ namespace Laundromat
 
         }
 
+        //fill tha display data grid viwe
         private void fillTable()
         {
             con.Open();
@@ -142,6 +147,30 @@ namespace Laundromat
             timeTable.Show();
         }
 
+        private void checkParliment()
+        {
+            DayOfWeek today = DateTime.Now.DayOfWeek;
+            if(today!= DayOfWeek.Monday && today != DayOfWeek.Wednesday && today!=DayOfWeek.Friday)
+            {
+                int i;
+                for (i = 0; i < dataGridView_operatorOut.RowCount; i++)
+                {
+                    int pId = Convert.ToInt32(dataGridView_operatorOut.Rows[i].Cells[0].Value);
+                    if(pId==42)
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("update vehicle_root set status = 'n' where root_id = 42", con);
+                        SqlCommand cmd1 = new SqlCommand("update tbl_timeTable set status = 'n' where root_id = 42 and date = (SELECT CONVERT (date, GETDATE()))", con);
+                        cmd.ExecuteNonQuery();
+                        cmd1.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+                fillTable();
+            }
+            
+        }
+
         private void Operator_Home_Load(object sender, EventArgs e)
         {
             try
@@ -149,6 +178,7 @@ namespace Laundromat
                 checkDay();
                 fillDatabase();
                 fillTable();
+                checkParliment();
                 fillcombo();
                 openForm();
             }
@@ -168,19 +198,43 @@ namespace Laundromat
                 if (dataGridView_operatorOut.Columns[e.ColumnIndex].Name == "dgv_operatorOutConfirm")
                 {
                     int index = e.RowIndex;
-                    string sqltime = "09:00:00";
-                    DateTime click = DateTime.Parse(sqltime);
-                    click = Convert.ToDateTime(DateTime.Now.ToString());
-                    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[index];
-                    string id = selectedRow.Cells[0].Value.ToString();
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' , leave_time = '"+click+"' where root_id = '" + id+"'",con);
-                    SqlCommand cmd1 = new SqlCommand("update vehicle_root SET status = 'g' where root_id = '" + id + "'", con);
-                    cmd.ExecuteNonQuery();
-                    cmd1.ExecuteNonQuery();
-                    con.Close();
-                    dataGridView_operatorOut.Rows.RemoveAt(index);
-                    fillTable();
+
+                    if (string.IsNullOrEmpty(dataGridView_operatorOut.Rows[index].Cells[1].Value as string))
+                    {
+                        MessageBox.Show("Please Select a Vehicle");
+                    }
+                    else if(string.IsNullOrEmpty(dataGridView_operatorOut.Rows[index].Cells[2].Value as string))
+                    {
+                        MessageBox.Show("Please Select a driver");
+                    }
+                    else
+                    {
+                        string sqltime = "09:00:00";
+                        DateTime click = DateTime.Parse(sqltime);
+                        click = Convert.ToDateTime(DateTime.Now.ToString());
+                        DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[index];
+
+                        string id = selectedRow.Cells[0].Value.ToString();
+                        string vehicleNo = dataGridView_operatorOut.Rows[index].Cells[1].Value.ToString();
+                        string driverName = dataGridView_operatorOut.Rows[index].Cells[2].Value.ToString();
+
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' , leave_time = '" + click + "' where root_id = '" + id + "'", con);
+                        SqlCommand cmd1 = new SqlCommand("update vehicle_root SET status = 'g' where root_id = '" + id + "'", con);
+                        SqlCommand cmd2 = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + vehicleNo + "' where root_id = '" + id + "'", con);
+                        SqlCommand cmd3 = new SqlCommand("UPDATE tbl_timeTable SET driver_name = '" + driverName + "' where root_id = '" + id + "'", con);
+
+                        cmd.ExecuteNonQuery();
+                        cmd1.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
+                        cmd3.ExecuteNonQuery();
+
+                        con.Close();
+                        dataGridView_operatorOut.Rows.RemoveAt(index);
+                        fillTable();
+                    }
+                    
                     
                 }
             }
@@ -237,9 +291,12 @@ namespace Laundromat
                     click = Convert.ToDateTime(DateTime.Now.ToString());
                     DataGridViewRow selectedRow = dataGridView_operatorIn.Rows[index];
                     string id = selectedRow.Cells[0].Value.ToString();
+                    
                     con.Open();
                     SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'f' , arrive_time = '"+click+"' where root_id = '" + id + "'", con);
+                    
                     cmd.ExecuteNonQuery();
+                    
                     con.Close();
                     dataGridView_operatorIn.Rows.RemoveAt(index);
 
@@ -280,28 +337,28 @@ namespace Laundromat
         {
             try
             {
-                if (this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 2)
-                {
-                    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
-                    string id = selectedRow.Cells[0].Value.ToString();
-                    string vehicleNo = dataGridView_operatorOut.Rows[x].Cells[1].Value.ToString();
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + vehicleNo + "' where root_id = '" + id + "'", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
-                if(this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 3)
-                {
-                    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
-                    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
-                    string id = selectedRow.Cells[0].Value.ToString();
-                    string driverName = dataGridView_operatorOut.Rows[x].Cells[2].Value.ToString();
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + driverName + "' where root_id = '" + id + "'", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                }
+                //if (this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 1)
+                //{
+                //    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
+                //    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
+                //    string id = selectedRow.Cells[0].Value.ToString();
+                //    string vehicleNo = dataGridView_operatorOut.Rows[x].Cells[1].Value.ToString();
+                //    con.Open();
+                //    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + vehicleNo + "' where root_id = '" + id + "'", con);
+                //    cmd.ExecuteNonQuery();
+                //    con.Close();
+                //}
+                //if(this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 2)
+                //{
+                //    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
+                //    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
+                //    string id = selectedRow.Cells[0].Value.ToString();
+                //    string driverName = dataGridView_operatorOut.Rows[x].Cells[2].Value.ToString();
+                //    con.Open();
+                //    SqlCommand cmd4 = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + driverName + "' where root_id = '" + id + "'", con);
+                //    cmd4.ExecuteNonQuery();
+                //    con.Close();
+                //}
             }
             catch(Exception ex)
             {
@@ -330,5 +387,30 @@ namespace Laundromat
             }
             */
             }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string userName = Program.logedUser;
+                string sqltime = "09:00:00";
+                DateTime click = DateTime.Parse(sqltime);
+                click = Convert.ToDateTime(DateTime.Now.ToString());
+                con.Open();
+
+                SqlCommand cmdl = new SqlCommand("update tbl_logedUsers set logout_time = '"+click+"' where user_name = '"+Program.logedUser+"' and login_time = '"+Program.login+"'", con);
+
+                cmdl.ExecuteNonQuery();
+                
+                con.Close();
+                this.Hide();
+                login log = new login();
+                log.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
