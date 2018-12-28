@@ -93,7 +93,7 @@ namespace Laundromat
                     leaveTime = Convert.ToDateTime(dataGridView_displayOut.Rows[i].Cells[4].Value.ToString());
 
                     TimeSpan timeDef = DateTime.Now - leaveTime ;
-                    int tsm = timeDef.Minutes;
+                    double tsm = timeDef.TotalMinutes;
                     
                     if(tsm> -10 && tsm < 0)
                     {
@@ -101,7 +101,7 @@ namespace Laundromat
                         row.DefaultCellStyle.BackColor = Color.Chartreuse;
                         row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 24 ,FontStyle.Bold);
                     }
-                    else if(tsm > 0)
+                    else if(tsm >= 0)
                     {
                         DataGridViewRow row = dataGridView_displayOut.Rows[i];
                         row.DefaultCellStyle.BackColor = Color.Coral;

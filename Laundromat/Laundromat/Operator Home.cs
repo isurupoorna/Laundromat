@@ -156,11 +156,11 @@ namespace Laundromat
                 for (i = 0; i < dataGridView_operatorOut.RowCount; i++)
                 {
                     int pId = Convert.ToInt32(dataGridView_operatorOut.Rows[i].Cells[0].Value);
-                    if(pId==42)
+                    if(pId==18)
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("update vehicle_root set status = 'n' where root_id = 42", con);
-                        SqlCommand cmd1 = new SqlCommand("update tbl_timeTable set status = 'n' where root_id = 42 and date = (SELECT CONVERT (date, GETDATE()))", con);
+                        SqlCommand cmd = new SqlCommand("update vehicle_root set status = 'n' where root_id = 18", con);
+                        SqlCommand cmd1 = new SqlCommand("update tbl_timeTable set status = 'n' where root_id = 18 and date = (SELECT CONVERT (date, GETDATE()))", con);
                         cmd.ExecuteNonQuery();
                         cmd1.ExecuteNonQuery();
                         con.Close();
