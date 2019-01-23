@@ -99,13 +99,13 @@ namespace Laundromat
                     {
                         DataGridViewRow row = dataGridView_displayOut.Rows[i];
                         row.DefaultCellStyle.BackColor = Color.Chartreuse;
-                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 24 ,FontStyle.Bold);
+                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 30 ,FontStyle.Bold);
                     }
                     else if(tsm >= 0)
                     {
                         DataGridViewRow row = dataGridView_displayOut.Rows[i];
                         row.DefaultCellStyle.BackColor = Color.Coral;
-                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 18);
+                        row.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 26);
                     }
 
                 }

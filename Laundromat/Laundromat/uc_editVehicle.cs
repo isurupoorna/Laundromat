@@ -78,27 +78,30 @@ namespace Laundromat
             {
                 if(string.IsNullOrEmpty(txt_vehicleNumber.Text))
                 {
-
+                    MessageBox.Show("sss");
                 }
-                if (cmb_driverName.SelectedIndex>0)
+                if (cmb_driverName.SelectedIndex<0)
                 {
-
+                    MessageBox.Show("sss");
                 }
                 else
                 {
-                    //int id;
-                    //con.Open();
-                    //SqlCommand cmd = new SqlCommand("select driver_id from tbl_driverDetails where driver_name='Arul'",con);
-                    //SqlDataReader sda;
-                    //sda = cmd.ExecuteReader();
-                    //while(sda.Read())
-                    //{
-                    //    id = Convert.ToInt32(sda["driver_id"].ToString());
-                    //}
-                    //sda.Close();
-                    //SqlCommand cmdi = new SqlCommand("insert into tbl_vehicle(vehicle_no,driver_id) values('" + txt_vehicleNumber.Text + "',"+100+")", con);
-                    //cmd.ExecuteNonQuery();
-                    //con.Close();
+                    int id=0;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select driver_id from tbl_driverDetails where driver_name='"+cmb_driverName.Text+"'", con);
+                    SqlDataReader sda;
+                    sda = cmd.ExecuteReader();
+                    while (sda.Read())
+                    {
+                        id = Convert.ToInt32(sda["driver_id"]);
+                    }
+                    
+                    sda.Close();
+                    SqlCommand cmdi = new SqlCommand("insert into tbl_vehicle(vehicle_no,driver_id) values('" + txt_vehicleNumber.Text + "','" + id + "')", con);
+                    cmdi.ExecuteNonQuery();
+                    con.Close();
+                    txt_vehicleNumber.Clear();
+                    cmb_driverName.Text = "";
                     fillGrid();
                 }
             }

@@ -50,16 +50,16 @@
             this.lbl_time = new System.Windows.Forms.Label();
             this.lbl_timeTableTime = new System.Windows.Forms.Label();
             this.dataGridView_displayIn = new System.Windows.Forms.DataGridView();
-            this.timer_timeTableSystemTime = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer_timeTable = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_inGroupArrivalTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer_timeTableSystemTime = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer_timeTable = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayOut)).BeginInit();
             this.pnl_headerTimeTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_displayIn)).BeginInit();
@@ -70,7 +70,7 @@
             // 
             this.pnl_displayOut.AutoSize = true;
             this.pnl_displayOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_displayOut.Location = new System.Drawing.Point(0, 58);
+            this.pnl_displayOut.Location = new System.Drawing.Point(0, 89);
             this.pnl_displayOut.Name = "pnl_displayOut";
             this.pnl_displayOut.Size = new System.Drawing.Size(1104, 0);
             this.pnl_displayOut.TabIndex = 1;
@@ -90,7 +90,7 @@
             this.dataGridView_displayOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -107,7 +107,7 @@
             this.dgv_outDriverNumber});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -115,7 +115,7 @@
             this.dataGridView_displayOut.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_displayOut.EnableHeadersVisualStyles = false;
             this.dataGridView_displayOut.GridColor = System.Drawing.Color.White;
-            this.dataGridView_displayOut.Location = new System.Drawing.Point(0, 58);
+            this.dataGridView_displayOut.Location = new System.Drawing.Point(0, 89);
             this.dataGridView_displayOut.Name = "dataGridView_displayOut";
             this.dataGridView_displayOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -128,7 +128,7 @@
             this.dataGridView_displayOut.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_displayOut.RowHeadersVisible = false;
             this.dataGridView_displayOut.RowTemplate.Height = 24;
-            this.dataGridView_displayOut.Size = new System.Drawing.Size(1104, 413);
+            this.dataGridView_displayOut.Size = new System.Drawing.Size(1104, 332);
             this.dataGridView_displayOut.TabIndex = 0;
             this.dataGridView_displayOut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_displayOut_CellContentClick);
             // 
@@ -184,17 +184,17 @@
             this.pnl_headerTimeTable.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_headerTimeTable.Location = new System.Drawing.Point(0, 0);
             this.pnl_headerTimeTable.Name = "pnl_headerTimeTable";
-            this.pnl_headerTimeTable.Size = new System.Drawing.Size(1104, 58);
+            this.pnl_headerTimeTable.Size = new System.Drawing.Size(1104, 89);
             this.pnl_headerTimeTable.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(79, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 39);
+            this.label2.Size = new System.Drawing.Size(239, 55);
             this.label2.TabIndex = 0;
             this.label2.Text = "Departure";
             // 
@@ -202,11 +202,11 @@
             // 
             this.lbl_time.AutoSize = true;
             this.lbl_time.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_time.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_time.Font = new System.Drawing.Font("Arial Narrow", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_time.ForeColor = System.Drawing.Color.Yellow;
             this.lbl_time.Location = new System.Drawing.Point(852, 17);
             this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(83, 40);
+            this.lbl_time.Size = new System.Drawing.Size(107, 52);
             this.lbl_time.TabIndex = 1;
             this.lbl_time.Text = "Time";
             // 
@@ -230,7 +230,7 @@
             this.dataGridView_displayIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -246,7 +246,7 @@
             this.dataGridViewTextBoxColumn6});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -255,7 +255,7 @@
             this.dataGridView_displayIn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView_displayIn.EnableHeadersVisualStyles = false;
             this.dataGridView_displayIn.GridColor = System.Drawing.Color.White;
-            this.dataGridView_displayIn.Location = new System.Drawing.Point(0, 546);
+            this.dataGridView_displayIn.Location = new System.Drawing.Point(0, 486);
             this.dataGridView_displayIn.Name = "dataGridView_displayIn";
             this.dataGridView_displayIn.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -268,42 +268,8 @@
             this.dataGridView_displayIn.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView_displayIn.RowHeadersVisible = false;
             this.dataGridView_displayIn.RowTemplate.Height = 24;
-            this.dataGridView_displayIn.Size = new System.Drawing.Size(1104, 329);
+            this.dataGridView_displayIn.Size = new System.Drawing.Size(1104, 389);
             this.dataGridView_displayIn.TabIndex = 2;
-            // 
-            // timer_timeTableSystemTime
-            // 
-            this.timer_timeTableSystemTime.Enabled = true;
-            this.timer_timeTableSystemTime.Interval = 10;
-            this.timer_timeTableSystemTime.Tick += new System.EventHandler(this.timer_timeTableSystemTime_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 471);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 75);
-            this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Arrivel";
-            // 
-            // timer_timeTable
-            // 
-            this.timer_timeTable.Enabled = true;
-            this.timer_timeTable.Interval = 10000;
-            this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,6 +307,40 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "driver_contact";
             this.dataGridViewTextBoxColumn6.HeaderText = "Driver Number";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // timer_timeTableSystemTime
+            // 
+            this.timer_timeTableSystemTime.Enabled = true;
+            this.timer_timeTableSystemTime.Interval = 10;
+            this.timer_timeTableSystemTime.Tick += new System.EventHandler(this.timer_timeTableSystemTime_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 412);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1104, 84);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 55);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Arrivel";
+            // 
+            // timer_timeTable
+            // 
+            this.timer_timeTable.Enabled = true;
+            this.timer_timeTable.Interval = 10000;
+            this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
             // 
             // frm_display
             // 
