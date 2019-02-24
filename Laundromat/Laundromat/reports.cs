@@ -95,15 +95,15 @@ namespace Laundromat
                 
                 if(dateTimePicker_startDate.Value.Date > DateTime.Today)
                 {
-                    MessageBox.Show("erroe");
+                    MessageBox.Show("Please select a valied date");
                 }
                 else if(dateTimePicker_endDate.Value.Date > DateTime.Today)
                 {
-                    MessageBox.Show("erroe");
+                    MessageBox.Show("Please select a valied date");
                 }
                 else if(dateTimePicker_startDate.Value.Date > dateTimePicker_endDate.Value.Date)
                 {
-                    MessageBox.Show("erroe");
+                    MessageBox.Show("Please select a valied date");
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace Laundromat
                         if(cmb_vehicle.Text=="All")
                         {
                             con.Open();
-                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '2018-10-14' and '2018-10-14' and driver_name = '"+cmb_driver.Text+"'", con);
+                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '" + dateTimePicker_startDate.Value.Date + "' and '" + dateTimePicker_endDate.Value.Date + "' and driver_name = '" + cmb_driver.Text+"'", con);
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
                             con.Close();
@@ -143,7 +143,7 @@ namespace Laundromat
                         else
                         {
                             con.Open();
-                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '2018-10-14' and '2018-10-14' and driver_name = '"+cmb_driver.Text+"' and vehicle_no = '"+cmb_vehicle.Text+"'", con);
+                            SqlDataAdapter sda = new SqlDataAdapter("select  driver_name,vehicle_no,leave_point,leave_time,destination,arrive_time from tbl_timeTable where date between '" + dateTimePicker_startDate.Value.Date + "' and '" + dateTimePicker_endDate.Value.Date + "' and driver_name = '" + cmb_driver.Text+"' and vehicle_no = '"+cmb_vehicle.Text+"'", con);
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
                             con.Close();

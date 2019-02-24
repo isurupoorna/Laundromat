@@ -64,6 +64,7 @@
             // dataGridView_report
             // 
             this.dataGridView_report.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_report.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_report.Location = new System.Drawing.Point(21, 295);
             this.dataGridView_report.Name = "dataGridView_report";

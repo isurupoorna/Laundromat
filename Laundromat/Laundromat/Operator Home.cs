@@ -147,7 +147,7 @@ namespace Laundromat
             timeTable.Show();
         }
 
-        private void checkParliment()
+        private void checkParliment() //check parliment dates
         {
             DayOfWeek today = DateTime.Now.DayOfWeek;
             if(today== DayOfWeek.Thursday || today == DayOfWeek.Tuesday || today==DayOfWeek.Saturday || today==DayOfWeek.Sunday)
@@ -244,7 +244,7 @@ namespace Laundromat
             }
             
         }
-        private void fillcombo()
+        private void fillcombo() //fill vehicle no combo box
         {
             ArrayList drivercol = new ArrayList();
             ArrayList vehiclecol = new ArrayList();
@@ -337,28 +337,7 @@ namespace Laundromat
         {
             try
             {
-                //if (this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 1)
-                //{
-                //    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
-                //    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
-                //    string id = selectedRow.Cells[0].Value.ToString();
-                //    string vehicleNo = dataGridView_operatorOut.Rows[x].Cells[1].Value.ToString();
-                //    con.Open();
-                //    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + vehicleNo + "' where root_id = '" + id + "'", con);
-                //    cmd.ExecuteNonQuery();
-                //    con.Close();
-                //}
-                //if(this.dataGridView_operatorOut.CurrentCell.ColumnIndex == 2)
-                //{
-                //    int x = dataGridView_operatorOut.CurrentCell.RowIndex;
-                //    DataGridViewRow selectedRow = dataGridView_operatorOut.Rows[x];
-                //    string id = selectedRow.Cells[0].Value.ToString();
-                //    string driverName = dataGridView_operatorOut.Rows[x].Cells[2].Value.ToString();
-                //    con.Open();
-                //    SqlCommand cmd4 = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + driverName + "' where root_id = '" + id + "'", con);
-                //    cmd4.ExecuteNonQuery();
-                //    con.Close();
-                //}
+
             }
             catch(Exception ex)
             {
@@ -368,25 +347,8 @@ namespace Laundromat
 
         private void timer_sound_Tick(object sender, EventArgs e)
         {
-            /*int i;
-            for (i = 0; i < dataGridView_operatorOut.RowCount; i++)
-            {
-                string sqltime = "09:00:00";
-                DateTime gg1 = DateTime.Parse(sqltime);
-                gg1 = Convert.ToDateTime(dataGridView_operatorOut.Rows[i].Cells[4].Value.ToString());
 
-                int q = DateTime.Compare(DateTime.Now, gg1);
-                if (q > 0)
-                {
-                    SoundPlayer player = new SoundPlayer(Properties.Resources.beep);
-                    player.Load();
-                    player.Play();
-                    break;
-                
-                }
-            }
-            */
-            }
+        }
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
