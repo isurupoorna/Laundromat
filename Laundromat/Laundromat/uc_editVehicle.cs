@@ -40,7 +40,7 @@ namespace Laundromat
 
         }
 
-        private void fillGrid()
+        private void fillGrid() //fill the datagrid view
         {
             try
             {
@@ -51,6 +51,7 @@ namespace Laundromat
                 sda.Fill(dt);
                 dataGridView_vehicle.DataSource = dt;
                 con.Close();
+                dataGridView_vehicle.AllowUserToAddRows = false;
             }
             catch(Exception ex)
             {
@@ -78,7 +79,7 @@ namespace Laundromat
             {
                 if(string.IsNullOrEmpty(txt_vehicleNumber.Text))
                 {
-                    MessageBox.Show("sss");
+                    MessageBox.Show("Please enter correct v");
                 }
                 if (cmb_driverName.SelectedIndex<0)
                 {

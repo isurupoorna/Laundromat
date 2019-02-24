@@ -32,35 +32,35 @@ namespace Laundromat
             }
             else if(string.IsNullOrEmpty(txt_groupId.Text))
             {
-                MessageBox.Show("");
+                MessageBox.Show("Enter correct Group ID");
             }
             else if(dateTimePicker_leaving.Value < dateTimePicker_arrival.Value)
             {
-
+                MessageBox.Show("Arrival time cannot be greater than leaving time");
             }
             else if(string.IsNullOrEmpty(txt_groupName.Text))
             {
-
+                MessageBox.Show("Enter correct group name");
             }
             else if(cmb_driver.SelectedIndex<0)
             {
-
+                MessageBox.Show("Please select a driver");
             }
             else if(cmb_vehicle.SelectedIndex <0)
             {
-
+                MessageBox.Show("Please select a vehicle");
             }
             else
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("insert into vehicle_root values('"+txt_leavePoint.Text+"', '"+dateTimePicker_leaving.Text+"', '"+txt_arrivalPoint.Text+"', '"+dateTimePicker_arrival.Text+"', '"+cmb_vehicle.Text+"',(select driver_id from tbl_driverDetails where driver_name = '"+cmb_driver.Text+"'), '"+cmb_driver+"',(select driver_contact from tbl_driverDetails where driver_name = '"+cmb_driver+"'),'p',"+txt_groupId.Text+",'"+txt_groupName.Text+"')");
-
+                
                 con.Close();
                     
             }
         }
 
-        private void fillVehicle()
+        private void fillVehicle() //fill vehicle combo box
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Laundromat
             }
         }
 
-        private void fillDriver()
+        private void fillDriver() // fill driver combo box
         {
             try
             {
@@ -107,7 +107,7 @@ namespace Laundromat
             fillGrid();
         }
 
-        private void fillGrid()
+        private void fillGrid() //fill date grid view
         {
             try
             {
@@ -116,6 +116,7 @@ namespace Laundromat
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dgv_root.DataSource = dt;
+                dgv_root.AllowUserToAddRows = false;
             }
             catch(Exception ex)
             {

@@ -30,6 +30,7 @@ namespace Laundromat
             sda.Fill(dt);
             dgv_driverDetails.DataSource = dt;
             con.Close();
+            dgv_driverDetails.AllowUserToAddRows = false;
         }
 
         private void btn_saveDriver_Click(object sender, EventArgs e)
@@ -38,15 +39,15 @@ namespace Laundromat
             {
                 if (string.IsNullOrEmpty(txt_driverName.Text) )
                 {
-                    errorProvider_name.SetError(txt_driverName, "please enter the name");
+                    errorProvider_name.SetError(txt_driverName, "Please enter the name");
                 }
                 else if (string.IsNullOrEmpty(txt_driverContact.Text) && txt_driverContact.Text.Length != 10)
                 {
-                    errorProvider_contact.SetError(txt_driverContact, "please enter valide driver's contact number");
+                    errorProvider_contact.SetError(txt_driverContact, "Please enter valide driver's contact number");
                 }
-                else if (string.IsNullOrEmpty(txt_driverNic.Text))
+                else if (string.IsNullOrEmpty(txt_driverNic.Text) && txt_driverNic.TextLength !=10)
                 {
-                    errorProvider_nic.SetError(txt_driverNic, "please enter nic");
+                    errorProvider_nic.SetError(txt_driverNic, "Please enter valid nic");
                 }
                 else
                 {
@@ -58,6 +59,7 @@ namespace Laundromat
                         MessageBox.Show("New Driver added successfully");
                     }
                     con.Close();
+                    loadData();
                 }
 
             }catch(Exception ex)
@@ -85,27 +87,35 @@ namespace Laundromat
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
         private void btn_updateDriver_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("update tbl_driverDetails set driver_name = '"+txt_driverName.Text+"' , driver_contact = '"+txt_driverContact.Text+"', driver_NIC = '"+txt_driverNic.Text+"' where driver_id = '"+id+"'", con);
-            int x = cmd.ExecuteNonQuery();
-            if(x>0)
+            try
             {
-                MessageBox.Show("Driver has Successfully Updated");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("update tbl_driverDetails set driver_name = '" + txt_driverName.Text + "' , driver_contact = '" + txt_driverContact.Text + "', driver_NIC = '" + txt_driverNic.Text + "' where driver_id = '" + id + "'", con);
+                int x = cmd.ExecuteNonQuery();
+                if (x > 0)
+                {
+                    MessageBox.Show("Driver has Successfully Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Please try again");
+                }
+                con.Close();
+                loadData();
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show("Please chell again");
+                MessageBox.Show("Please check your connection");
             }
-            con.Close();
-            loadData();
+            
         }
 
     }

@@ -206,7 +206,7 @@
             this.lbl_time.ForeColor = System.Drawing.Color.Yellow;
             this.lbl_time.Location = new System.Drawing.Point(852, 17);
             this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(107, 52);
+            this.lbl_time.Size = new System.Drawing.Size(106, 52);
             this.lbl_time.TabIndex = 1;
             this.lbl_time.Text = "Time";
             // 
@@ -339,7 +339,7 @@
             // timer_timeTable
             // 
             this.timer_timeTable.Enabled = true;
-            this.timer_timeTable.Interval = 10000;
+            this.timer_timeTable.Interval = 20000;
             this.timer_timeTable.Tick += new System.EventHandler(this.timer_timeTable_Tick);
             // 
             // frm_display

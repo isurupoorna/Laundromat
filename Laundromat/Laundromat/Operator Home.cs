@@ -391,7 +391,7 @@ namespace Laundromat
                 login log = new login();
                 log.ShowDialog();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Please check your connection");
             }

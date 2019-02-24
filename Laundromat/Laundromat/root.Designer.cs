@@ -229,6 +229,7 @@
             // btn_update
             // 
             this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.Blue;
             this.btn_update.Location = new System.Drawing.Point(569, 328);
             this.btn_update.Name = "btn_update";

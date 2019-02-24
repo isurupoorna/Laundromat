@@ -29,12 +29,21 @@ namespace Laundromat
 
         private void loadUser()
         {
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from tbl_logIn",con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dgv_userDetails.DataSource = dt;
-            con.Close();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("select * from tbl_logIn", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dgv_userDetails.DataSource = dt;
+                dgv_userDetails.AllowUserToAddRows = false;
+                con.Close();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Please check your connection");
+            }
+            
 
         }
 
