@@ -21,13 +21,13 @@ namespace Laundromat
             InitializeComponent();
         }
 
-        private void timer_timeTableSystemTime_Tick(object sender, EventArgs e)
+        private void timer_timeTableSystemTime_Tick(object sender, EventArgs e)//display the currunt time
         {
             DateTime dt = DateTime.Now;
             this.lbl_time.Text = dt.ToString();
         }
 
-        private void setData()
+        private void setData() // retrive date from database and display on datagrid view
         {
             try
             {              
@@ -46,26 +46,25 @@ namespace Laundromat
                 dataGridView_displayIn.DataSource = dtIn;
                 con.Close();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
-        private void frm_display_Load(object sender, EventArgs e)
-        {
-            Timer timer = new Timer();
-            timer.Interval = (30 * 1000); // 10 secs
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
-
+        private void frm_display_Load(object sender, EventArgs e) //refresh the display
+        {           
             try
             {
+                Timer timer = new Timer();
+                timer.Interval = (30 * 1000); // 10 secs
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
                 setData();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
@@ -79,7 +78,7 @@ namespace Laundromat
 
         }
 
-        private void timer_timeTable_Tick(object sender, EventArgs e)
+        private void timer_timeTable_Tick(object sender, EventArgs e) //change column colour
         {
             try
             {
@@ -123,9 +122,9 @@ namespace Laundromat
                     
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
             
         }

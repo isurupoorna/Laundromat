@@ -112,7 +112,7 @@
             this.btn_saveDriver.Name = "btn_saveDriver";
             this.btn_saveDriver.Size = new System.Drawing.Size(117, 38);
             this.btn_saveDriver.TabIndex = 6;
-            this.btn_saveDriver.Text = "Save";
+            this.btn_saveDriver.Text = "Add";
             this.btn_saveDriver.UseVisualStyleBackColor = false;
             this.btn_saveDriver.Click += new System.EventHandler(this.btn_saveDriver_Click);
             // 

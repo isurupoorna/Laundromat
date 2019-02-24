@@ -26,7 +26,7 @@ namespace Laundromat
             InitializeComponent();
         }
         
-        private void timer_operatorTime_Tick(object sender, EventArgs e)
+        private void timer_operatorTime_Tick(object sender, EventArgs e) 
         {
             nowTime = DateTime.Now;
             this.lbl_time.Text = nowTime.ToString();
@@ -58,9 +58,9 @@ namespace Laundromat
                 
                 con.Close();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
 
         }
@@ -112,9 +112,9 @@ namespace Laundromat
                 }
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
             
 
@@ -123,25 +123,33 @@ namespace Laundromat
         //fill tha display data grid viwe
         private void fillTable()
         {
-            con.Open();
-            SqlDataAdapter sdaOut = new SqlDataAdapter("select * from vehicle_root where status = 'p' order by leave_time", con);
-            SqlDataAdapter sdaIn = new SqlDataAdapter("select * from tbl_timeTable where status = 'g' and date = (SELECT CONVERT (date, GETDATE())) ", con);
-            dt = new DataTable();
-            dtInDelevers = new DataTable();
-            sdaOut.Fill(dt);
-            sdaIn.Fill(dtInDelevers);
-            dataGridView_operatorOut.AutoGenerateColumns = false;
-            dataGridView_operatorIn.AutoGenerateColumns = false;
-            dataGridView_operatorOut.AllowUserToAddRows = false;
-            dataGridView_operatorIn.AllowUserToAddRows = false;
-            dataGridView_operatorOut.DataSource = dt;
-            dataGridView_operatorIn.DataSource = dtInDelevers;
-            con.Close();
+            try
+            {
+                con.Open();
+                SqlDataAdapter sdaOut = new SqlDataAdapter("select * from vehicle_root where status = 'p' order by leave_time", con);
+                SqlDataAdapter sdaIn = new SqlDataAdapter("select * from tbl_timeTable where status = 'g' and date = (SELECT CONVERT (date, GETDATE())) ", con);
+                dt = new DataTable();
+                dtInDelevers = new DataTable();
+                sdaOut.Fill(dt);
+                sdaIn.Fill(dtInDelevers);
+                dataGridView_operatorOut.AutoGenerateColumns = false;
+                dataGridView_operatorIn.AutoGenerateColumns = false;
+                dataGridView_operatorOut.AllowUserToAddRows = false;
+                dataGridView_operatorIn.AllowUserToAddRows = false;
+                dataGridView_operatorOut.DataSource = dt;
+                dataGridView_operatorIn.DataSource = dtInDelevers;
+                con.Close();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Please check your connection");
+            }
+            
             
             
 
         }
-        private void openForm()
+        private void openForm()//open the display form 
         {
             Form timeTable = new frm_display();
             timeTable.Show();
@@ -149,25 +157,33 @@ namespace Laundromat
 
         private void checkParliment() //check parliment dates
         {
-            DayOfWeek today = DateTime.Now.DayOfWeek;
-            if(today== DayOfWeek.Thursday || today == DayOfWeek.Tuesday || today==DayOfWeek.Saturday || today==DayOfWeek.Sunday)
+            try
             {
-                int i;
-                for (i = 0; i < dataGridView_operatorOut.RowCount; i++)
+                DayOfWeek today = DateTime.Now.DayOfWeek;
+                if (today == DayOfWeek.Thursday || today == DayOfWeek.Tuesday || today == DayOfWeek.Saturday || today == DayOfWeek.Sunday)
                 {
-                    int pId = Convert.ToInt32(dataGridView_operatorOut.Rows[i].Cells[0].Value);
-                    if(pId==42)
+                    int i;
+                    for (i = 0; i < dataGridView_operatorOut.RowCount; i++)
                     {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("update vehicle_root set status = 'n' where root_id = 42", con);
-                        SqlCommand cmd1 = new SqlCommand("update tbl_timeTable set status = 'n' where root_id = 42 and date = (SELECT CONVERT (date, GETDATE()))", con);
-                        cmd.ExecuteNonQuery();
-                        cmd1.ExecuteNonQuery();
-                        con.Close();
+                        int pId = Convert.ToInt32(dataGridView_operatorOut.Rows[i].Cells[0].Value);
+                        if (pId == 42)
+                        {
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand("update vehicle_root set status = 'n' where root_id = 42", con);
+                            SqlCommand cmd1 = new SqlCommand("update tbl_timeTable set status = 'n' where root_id = 42 and date = (SELECT CONVERT (date, GETDATE()))", con);
+                            cmd.ExecuteNonQuery();
+                            cmd1.ExecuteNonQuery();
+                            con.Close();
+                        }
                     }
+                    fillTable();
                 }
-                fillTable();
             }
+            catch(Exception)
+            {
+                MessageBox.Show("Please check your connection");
+            }
+            
             
         }
 
@@ -182,15 +198,15 @@ namespace Laundromat
                 fillcombo();
                 openForm();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
                 
             }
            
         }
 
-        private void dataGridView_operatorOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_operatorOut_CellContentClick(object sender, DataGridViewCellEventArgs e) //conform button 
         {
 
             try
@@ -238,44 +254,50 @@ namespace Laundromat
                     
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
             
         }
         private void fillcombo() //fill vehicle no combo box
         {
-            ArrayList drivercol = new ArrayList();
-            ArrayList vehiclecol = new ArrayList();
-            con.Open();
-
-
-            //load data for vehicle combo
-            SqlDataAdapter sdaV = new SqlDataAdapter("select vehicle_no from tbl_vehicle", con);
-            DataTable veh = new DataTable();
-            sdaV.Fill(veh);
-            foreach (DataRow dr in veh.Rows)
+            try
             {
-                vehiclecol.Add(dr["vehicle_no"]).ToString();
+                ArrayList drivercol = new ArrayList();
+                ArrayList vehiclecol = new ArrayList();
+                con.Open();
+
+
+                //load data for vehicle combo
+                SqlDataAdapter sdaV = new SqlDataAdapter("select vehicle_no from tbl_vehicle", con);
+                DataTable veh = new DataTable();
+                sdaV.Fill(veh);
+                foreach (DataRow dr in veh.Rows)
+                {
+                    vehiclecol.Add(dr["vehicle_no"]).ToString();
+                }
+
+
+                //load data for driver combo
+                SqlDataAdapter sdaD = new SqlDataAdapter("select driver_name from tbl_driverDetails", con);
+                DataTable dri = new DataTable();
+                sdaD.Fill(dri);
+                foreach (DataRow dr1 in dri.Rows)
+                {
+                    drivercol.Add(dr1["driver_name"].ToString());
+                }
+
+                con.Close();
+
+                dgv_operatorOutDriverName.Items.AddRange(drivercol.ToArray());
+                dgv_operatorOutVehicleNo.Items.AddRange(vehiclecol.ToArray());
             }
-
-
-            //load data for driver combo
-            SqlDataAdapter sdaD = new SqlDataAdapter("select driver_name from tbl_driverDetails", con);
-            DataTable dri = new DataTable();
-            sdaD.Fill(dri);
-            foreach(DataRow dr1 in dri.Rows)
+            catch(Exception)
             {
-                drivercol.Add(dr1["driver_name"].ToString());
+                MessageBox.Show("Please check your connection");
             }
-
-
-
-            con.Close();
-                     
-            dgv_operatorOutDriverName.Items.AddRange(drivercol.ToArray());
-            dgv_operatorOutVehicleNo.Items.AddRange(vehiclecol.ToArray());
+            
            
         }
 
@@ -302,9 +324,9 @@ namespace Laundromat
 
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
@@ -327,9 +349,9 @@ namespace Laundromat
                     }
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }   
         }
 
@@ -371,7 +393,7 @@ namespace Laundromat
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
     }
