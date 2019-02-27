@@ -34,7 +34,7 @@ namespace Laundromat
             {
                 MessageBox.Show("Enter correct Group ID");
             }
-            else if(dateTimePicker_leaving.Value < dateTimePicker_arrival.Value)
+            else if(dateTimePicker_leaving.Value > dateTimePicker_arrival.Value)
             {
                 MessageBox.Show("Arrival time cannot be greater than leaving time");
             }
@@ -52,10 +52,25 @@ namespace Laundromat
             }
             else
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("insert into vehicle_root values('"+txt_leavePoint.Text+"', '"+dateTimePicker_leaving.Text+"', '"+txt_arrivalPoint.Text+"', '"+dateTimePicker_arrival.Text+"', '"+cmb_vehicle.Text+"',(select driver_id from tbl_driverDetails where driver_name = '"+cmb_driver.Text+"'), '"+cmb_driver+"',(select driver_contact from tbl_driverDetails where driver_name = '"+cmb_driver+"'),'p',"+txt_groupId.Text+",'"+txt_groupName.Text+"')");
-                
-                con.Close();
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into vehicle_root values('" + txt_leavePoint.Text + "', '" + dateTimePicker_leaving.Text + "', '" + txt_arrivalPoint.Text + "', '" + dateTimePicker_arrival.Text + "', '" + cmb_vehicle.Text + "',(select driver_id from tbl_driverDetails where driver_name = '" + cmb_driver.Text + "'), '" + cmb_driver + "',(select driver_contact from tbl_driverDetails where driver_name = '" + cmb_driver + "'),'p'," + txt_groupId.Text + ",'" + txt_groupName.Text + "')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    fillGrid();
+                    txt_leavePoint.Text = "";
+                    txt_arrivalPoint.Text = "";
+                    txt_groupId.Text = "";
+                    txt_groupName.Text = "";
+                    cmb_driver.Text = "";
+                    cmb_vehicle.Text = "";
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
                     
             }
         }
@@ -117,6 +132,7 @@ namespace Laundromat
                 sda.Fill(dt);
                 dgv_root.DataSource = dt;
                 dgv_root.AllowUserToAddRows = false;
+                con.Close();
             }
             catch(Exception ex)
             {

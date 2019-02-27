@@ -70,7 +70,7 @@
             // 
             this.dataGridView_vehicle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_vehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_vehicle.Location = new System.Drawing.Point(473, 23);
+            this.dataGridView_vehicle.Location = new System.Drawing.Point(467, 118);
             this.dataGridView_vehicle.Name = "dataGridView_vehicle";
             this.dataGridView_vehicle.RowTemplate.Height = 24;
             this.dataGridView_vehicle.Size = new System.Drawing.Size(564, 362);
