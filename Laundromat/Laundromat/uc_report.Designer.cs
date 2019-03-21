@@ -37,7 +37,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Name = "uc_report";
-            this.Size = new System.Drawing.Size(972, 659);
+            this.Size = new System.Drawing.Size(1028, 766);
             this.ResumeLayout(false);
 
         }

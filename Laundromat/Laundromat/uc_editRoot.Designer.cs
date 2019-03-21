@@ -50,11 +50,11 @@
             this.dgv_editRootEndPoint,
             this.dgv_editRootVehicle,
             this.dgv_editRootDriver});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 152);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 93);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(837, 318);
+            this.dataGridView1.Size = new System.Drawing.Size(10, 10);
             this.dataGridView1.TabIndex = 0;
             // 
             // dgv_editRootOutTime

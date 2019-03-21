@@ -20,7 +20,7 @@ namespace Laundromat
             InitializeComponent();
         }
 
-        private void fillDriver()
+        private void fillDriver() //fill driver combo box
         {
             try
             {
@@ -33,9 +33,9 @@ namespace Laundromat
                 dr.Close();
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
 
         }
@@ -46,16 +46,16 @@ namespace Laundromat
             {
                 con.Open();
 
-                SqlDataAdapter sda = new SqlDataAdapter("select * from tbl_vehicle", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select vehicle_no,driver_name from tbl_vehicle,tbl_driverDetails where tbl_driverDetails.driver_id = tbl_vehicle.driver_id", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView_vehicle.DataSource = dt;
                 con.Close();
                 dataGridView_vehicle.AllowUserToAddRows = false;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
@@ -67,9 +67,9 @@ namespace Laundromat
                 fillGrid();
                 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
@@ -79,26 +79,16 @@ namespace Laundromat
             {
                 if(string.IsNullOrEmpty(txt_vehicleNumber.Text))
                 {
-                    MessageBox.Show("Please enter correct v");
+                    MessageBox.Show("Please enter correct vehicle No");
                 }
-                if (cmb_driverName.SelectedIndex<0)
+                else if (cmb_driverName.SelectedIndex<0)
                 {
-                    MessageBox.Show("sss");
+                    MessageBox.Show("Please select a driver");
                 }
                 else
                 {
-                    int id=0;
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select driver_id from tbl_driverDetails where driver_name='"+cmb_driverName.Text+"'", con);
-                    SqlDataReader sda;
-                    sda = cmd.ExecuteReader();
-                    while (sda.Read())
-                    {
-                        id = Convert.ToInt32(sda["driver_id"]);
-                    }
-                    
-                    sda.Close();
-                    SqlCommand cmdi = new SqlCommand("insert into tbl_vehicle(vehicle_no,driver_id) values('" + txt_vehicleNumber.Text + "','" + id + "')", con);
+                    SqlCommand cmdi = new SqlCommand("insert into tbl_vehicle(vehicle_no,driver_id) values('" + txt_vehicleNumber.Text + "',(select driver_id from tbl_driverDetails where driver_name='" + cmb_driverName.Text + "'))", con);
                     cmdi.ExecuteNonQuery();
                     con.Close();
                     txt_vehicleNumber.Clear();
@@ -106,9 +96,73 @@ namespace Laundromat
                     fillGrid();
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
+            }
+        }
+
+        private void dataGridView_vehicle_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView_vehicle.Rows[e.RowIndex];
+                txt_vehicleNumber.Text = row.Cells[0].Value.ToString();
+               
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_vehicleNumber.Text))
+                {
+                    MessageBox.Show("Please enter correct vehicle No");
+                }
+                else if (cmb_driverName.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select a driver");
+                }
+                else
+                {
+                    con.Open();
+                    SqlCommand cmdi = new SqlCommand("update tbl_vehicle set driver_id = (select driver_id from tbl_driverDetails where driver_name = '"+cmb_driverName.Text+"') where vehicle_no = '"+txt_vehicleNumber.Text+"'", con);
+                    cmdi.ExecuteNonQuery();
+                    con.Close();
+                    txt_vehicleNumber.Clear();
+                    cmb_driverName.Text = "";
+                    fillGrid();
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Please check your connection");
+            }
+        }
+
+        private void btn_delVehicle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txt_vehicleNumber.Text))
+                {
+                    MessageBox.Show("Please Select a vehicle No from table");
+                }
+                else
+                {
+                    con.Open();
+                    SqlCommand cmdi = new SqlCommand("delete from tbl_vehicle where vehicle_no = '"+txt_vehicleNumber.Text+"'", con);
+                    cmdi.ExecuteNonQuery();
+                    con.Close();
+                    txt_vehicleNumber.Clear();
+                    cmb_driverName.Text = "";
+                    fillGrid();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please check your connection");
             }
         }
     }

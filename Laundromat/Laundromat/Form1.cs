@@ -56,10 +56,6 @@ namespace Laundromat
         {           
             try
             {
-                //Timer timer = new Timer();
-                //timer.Interval = (30 * 1000); // 10 secs
-                //timer.Tick += new EventHandler(timer_Tick);
-                //timer.Start();
                 setData();
             }
             catch(Exception)

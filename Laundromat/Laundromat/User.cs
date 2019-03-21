@@ -70,11 +70,11 @@ namespace Laundromat
         {
             if(string.IsNullOrEmpty(txt_user.Text))
             {
-                MessageBox.Show(" Please Enter Valied User Name ");
+                MessageBox.Show(" Please Enter Valid User Name ");
             }
             else if(string.IsNullOrEmpty(txt_pass.Text))
             {
-                MessageBox.Show("Please Enter Valied Password");
+                MessageBox.Show("Please Enter Valid Password");
             }
             else if(cmb_type.SelectedIndex<0)
             {
@@ -144,7 +144,7 @@ namespace Laundromat
                 con.Close();
                 if (x > 0)
                 {
-                    MessageBox.Show("User Has Successfuly Deleted");
+                    MessageBox.Show("User Has Successfully Deleted");
                     txt_pass.Text = "";
                     txt_user.Text = "";
                     cmb_type.Text = "";

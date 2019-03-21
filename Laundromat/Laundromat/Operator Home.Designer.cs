@@ -85,12 +85,16 @@
             // 
             // btn_logout
             // 
-            this.btn_logout.Location = new System.Drawing.Point(1585, 12);
+            this.btn_logout.BackColor = System.Drawing.Color.White;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.Blue;
+            this.btn_logout.Location = new System.Drawing.Point(1516, 12);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(108, 34);
+            this.btn_logout.Size = new System.Drawing.Size(108, 39);
             this.btn_logout.TabIndex = 3;
             this.btn_logout.Text = "Logout";
-            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // label1

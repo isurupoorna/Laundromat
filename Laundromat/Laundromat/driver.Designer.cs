@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             // btn_saveDriver
             // 
             this.btn_saveDriver.BackColor = System.Drawing.Color.White;
+            this.btn_saveDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_saveDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveDriver.ForeColor = System.Drawing.Color.Blue;
             this.btn_saveDriver.Location = new System.Drawing.Point(760, 66);
@@ -119,6 +121,15 @@
             // dgv_driverDetails
             // 
             this.dgv_driverDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_driverDetails.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_driverDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_driverDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_driverDetails.Location = new System.Drawing.Point(139, 385);
             this.dgv_driverDetails.Name = "dgv_driverDetails";
@@ -145,7 +156,7 @@
             this.btn_updateDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_updateDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_updateDriver.ForeColor = System.Drawing.Color.Blue;
-            this.btn_updateDriver.Location = new System.Drawing.Point(760, 133);
+            this.btn_updateDriver.Location = new System.Drawing.Point(760, 140);
             this.btn_updateDriver.Name = "btn_updateDriver";
             this.btn_updateDriver.Size = new System.Drawing.Size(117, 35);
             this.btn_updateDriver.TabIndex = 8;
@@ -158,12 +169,13 @@
             this.btn_delDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delDriver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delDriver.ForeColor = System.Drawing.Color.Blue;
-            this.btn_delDriver.Location = new System.Drawing.Point(760, 208);
+            this.btn_delDriver.Location = new System.Drawing.Point(760, 215);
             this.btn_delDriver.Name = "btn_delDriver";
             this.btn_delDriver.Size = new System.Drawing.Size(117, 35);
             this.btn_delDriver.TabIndex = 9;
             this.btn_delDriver.Text = "Delete";
             this.btn_delDriver.UseVisualStyleBackColor = true;
+            this.btn_delDriver.Click += new System.EventHandler(this.btn_delDriver_Click);
             // 
             // driver
             // 

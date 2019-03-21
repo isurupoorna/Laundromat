@@ -116,6 +116,7 @@
             this.dgv_root.RowTemplate.Height = 24;
             this.dgv_root.Size = new System.Drawing.Size(1337, 317);
             this.dgv_root.TabIndex = 9;
+            this.dgv_root.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_root_CellClick);
             // 
             // btn_add
             // 
@@ -237,6 +238,7 @@
             this.btn_update.TabIndex = 21;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // root
             // 

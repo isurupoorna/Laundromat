@@ -41,11 +41,11 @@ namespace Laundromat
                 {
                     errorProvider_name.SetError(txt_driverName, "Please enter the name");
                 }
-                else if (string.IsNullOrEmpty(txt_driverContact.Text) && txt_driverContact.Text.Length != 10)
+                else if (string.IsNullOrEmpty(txt_driverContact.Text) || txt_driverContact.Text.Length != 10)
                 {
                     errorProvider_contact.SetError(txt_driverContact, "Please enter valide driver's contact number");
                 }
-                else if (string.IsNullOrEmpty(txt_driverNic.Text) && txt_driverNic.TextLength !=10)
+                else if (string.IsNullOrEmpty(txt_driverNic.Text) || txt_driverNic.TextLength !=10)
                 {
                     errorProvider_nic.SetError(txt_driverNic, "Please enter valid nic");
                 }
@@ -62,9 +62,9 @@ namespace Laundromat
                     loadData();
                 }
 
-            }catch(Exception ex)
+            }catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please check your connection");
             }
         }
 
@@ -97,26 +97,65 @@ namespace Laundromat
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("update tbl_driverDetails set driver_name = '" + txt_driverName.Text + "' , driver_contact = '" + txt_driverContact.Text + "', driver_NIC = '" + txt_driverNic.Text + "' where driver_id = '" + id + "'", con);
-                int x = cmd.ExecuteNonQuery();
-                if (x > 0)
+                if (string.IsNullOrEmpty(txt_driverName.Text))
                 {
-                    MessageBox.Show("Driver has Successfully Updated");
+                    errorProvider_name.SetError(txt_driverName, "Please enter the name");
+                }
+                else if (string.IsNullOrEmpty(txt_driverContact.Text) || txt_driverContact.Text.Length != 10)
+                {
+                    errorProvider_contact.SetError(txt_driverContact, "Please enter valid driver's contact number");
+                }
+                else if (string.IsNullOrEmpty(txt_driverNic.Text) || txt_driverNic.TextLength != 10)
+                {
+                    errorProvider_nic.SetError(txt_driverNic, "Please enter valid NIC");
                 }
                 else
                 {
-                    MessageBox.Show("Please try again");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("update tbl_driverDetails set driver_name = '" + txt_driverName.Text + "' , driver_contact = '" + txt_driverContact.Text + "', driver_NIC = '" + txt_driverNic.Text + "' where driver_id = '" + id + "'", con);
+                    int x = cmd.ExecuteNonQuery();
+                    con.Close();
+                    if (x > 0)
+                    {
+                        MessageBox.Show("Driver has Successfully Updated");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please try again");
+                    }
+                                       
                 }
-                con.Close();
-                loadData();
+                
             }
             catch(Exception)
             {
-                MessageBox.Show("Please check your connection");
+                MessageBox.Show("Enter a valid mobile number");
             }
             
         }
 
+        private void btn_delDriver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("delete from tbl_driverDetails where driver_NIC = '"+txt_driverNic.Text+"' ", con);
+                int x = cmd.ExecuteNonQuery();
+                con.Close();
+                if (x > 0)
+                {
+                    MessageBox.Show("Driver Has Successfully Deleted");
+                }
+                loadData();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please check your connection");
+            }
+        }
     }
 }

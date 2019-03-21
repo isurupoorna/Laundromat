@@ -173,9 +173,9 @@
             this.btn_admin.ForeColor = System.Drawing.Color.Blue;
             this.btn_admin.Image = global::Laundromat.Properties.Resources.admin1;
             this.btn_admin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_admin.Location = new System.Drawing.Point(447, 612);
+            this.btn_admin.Location = new System.Drawing.Point(464, 612);
             this.btn_admin.Name = "btn_admin";
-            this.btn_admin.Size = new System.Drawing.Size(141, 40);
+            this.btn_admin.Size = new System.Drawing.Size(96, 40);
             this.btn_admin.TabIndex = 8;
             this.btn_admin.Text = "      Admin";
             this.btn_admin.UseVisualStyleBackColor = true;

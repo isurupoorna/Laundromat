@@ -24,7 +24,7 @@ namespace Laundromat
         {
             fillDriver();
             fillVehicle();
-            fillRoot();
+            //fillRoot();
         }
 
         private void fillDriver()
@@ -48,25 +48,25 @@ namespace Laundromat
            
         }
 
-        private void fillRoot()
-        {
-            try
-            {
-                con.Open();
-                SqlDataReader sda  = new SqlCommand("select group_name from tbl_rootGroup", con).ExecuteReader();
-                while(sda.Read())
-                {
-                    cmb_rootName.Items.Add(sda.GetValue(0).ToString());
-                }
-                sda.Close();
-                cmb_rootName.Items.Add("All");
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //private void fillRoot()
+        //{
+        //    try
+        //    {
+        //        con.Open();
+        //        SqlDataReader sda  = new SqlCommand("select group_name from tbl_rootGroup", con).ExecuteReader();
+        //        while(sda.Read())
+        //        {
+        //            cmb_rootName.Items.Add(sda.GetValue(0).ToString());
+        //        }
+        //        sda.Close();
+        //        cmb_rootName.Items.Add("All");
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
 
         private void fillVehicle()
         {
