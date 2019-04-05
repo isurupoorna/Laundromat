@@ -57,7 +57,7 @@ namespace Laundromat
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into vehicle_root values('" + txt_leavePoint.Text + "', '" + dateTimePicker_leaving.Text + "', '" + txt_arrivalPoint.Text + "', '" + dateTimePicker_arrival.Text + "', '" + cmb_vehicle.Text + "',(select driver_id from tbl_driverDetails where driver_name = '" + cmb_driver.Text + "'), '" + cmb_driver + "',(select driver_contact from tbl_driverDetails where driver_name = '" + cmb_driver + "'),'p'," + txt_groupId.Text + ",'" + txt_groupName.Text + "')", con);
+                    SqlCommand cmd = new SqlCommand("insert into vehicle_root values('" + txt_leavePoint.Text + "', '" + dateTimePicker_leaving.Text + "', '" + txt_arrivalPoint.Text + "', '" + dateTimePicker_arrival.Text + "', '" + cmb_vehicle.Text + "',(select driver_id from tbl_driverDetails where driver_name = '" + cmb_driver.Text + "'), '" + cmb_driver.Text + "',(select driver_contact from tbl_driverDetails where driver_name = '" + cmb_driver + "'),'p'," + txt_groupId.Text + ",'" + txt_groupName.Text + "')", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     fillGrid();
@@ -135,6 +135,7 @@ namespace Laundromat
                 dgv_root.DataSource = dt;
                 dgv_root.AllowUserToAddRows = false;
                 con.Close();
+                dgv_root.AutoGenerateColumns = false;
             }
             catch(Exception)
             {
@@ -177,7 +178,7 @@ namespace Laundromat
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("update vehicle_root set leave_point = '"+txt_leavePoint+"', leave_time = '"+dateTimePicker_leaving.Text+"' , destination = '"+txt_arrivalPoint.Text+"' , arrive_time = '"+dateTimePicker_arrival.Text+"' , vehicle_no = '"+cmb_vehicle.Text+"' , driver_name = '"+txt_groupName.Text+"' , group_id = '"+txt_groupId.Text+"' , group_name = '"+txt_groupId.Text+ "' where root_id = '"+root_id+"'  ", con);
+                    SqlCommand cmd = new SqlCommand("update vehicle_root set leave_point = '"+txt_leavePoint.Text+"', leave_time = '"+dateTimePicker_leaving.Text+"' , destination = '"+txt_arrivalPoint.Text+"' , arrive_time = '"+dateTimePicker_arrival.Text+"' , vehicle_no = '"+cmb_vehicle.Text+"' , driver_name = '"+txt_groupName.Text+"' , group_id = '"+txt_groupId.Text+"' , group_name = '"+txt_groupName.Text+ "' where root_id = '"+root_id+"'  ", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     fillGrid();

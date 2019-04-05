@@ -101,6 +101,9 @@
             // 
             // dgv_userDetails
             // 
+            this.dgv_userDetails.AllowUserToAddRows = false;
+            this.dgv_userDetails.AllowUserToDeleteRows = false;
+            this.dgv_userDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_userDetails.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -113,6 +116,8 @@
             this.dgv_userDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_userDetails.Location = new System.Drawing.Point(476, 31);
             this.dgv_userDetails.Name = "dgv_userDetails";
+            this.dgv_userDetails.ReadOnly = true;
+            this.dgv_userDetails.RowHeadersVisible = false;
             this.dgv_userDetails.RowTemplate.Height = 24;
             this.dgv_userDetails.Size = new System.Drawing.Size(564, 362);
             this.dgv_userDetails.TabIndex = 6;

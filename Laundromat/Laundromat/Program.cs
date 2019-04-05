@@ -22,7 +22,7 @@ namespace Laundromat
             
         }
         public static string serverIp = ConfigurationManager.AppSettings["serverIp"];
-        public static string server = "Data Source=DESKTOP-3V2I63M;Initial Catalog=londromat;Integrated Security=True";
+        public static string server = "Data Source=" + serverIp + ";Initial Catalog=londromat;User ID=dandl;Password=d&lpassword01 ";
 
 
 

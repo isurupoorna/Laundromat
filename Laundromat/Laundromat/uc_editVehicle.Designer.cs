@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_vehicleNumber = new System.Windows.Forms.TextBox();
@@ -72,19 +72,20 @@
             // 
             this.dataGridView_vehicle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_vehicle.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_vehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_vehicle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_vehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_vehicle.Location = new System.Drawing.Point(467, 118);
             this.dataGridView_vehicle.Name = "dataGridView_vehicle";
+            this.dataGridView_vehicle.RowHeadersVisible = false;
             this.dataGridView_vehicle.RowTemplate.Height = 24;
-            this.dataGridView_vehicle.Size = new System.Drawing.Size(695, 535);
+            this.dataGridView_vehicle.Size = new System.Drawing.Size(755, 535);
             this.dataGridView_vehicle.TabIndex = 4;
             this.dataGridView_vehicle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_vehicle_CellClick);
             // 
@@ -148,7 +149,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "uc_editVehicle";
-            this.Size = new System.Drawing.Size(1175, 723);
+            this.Size = new System.Drawing.Size(1897, 749);
             this.Load += new System.EventHandler(this.uc_editVehicle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_vehicle)).EndInit();
             this.ResumeLayout(false);

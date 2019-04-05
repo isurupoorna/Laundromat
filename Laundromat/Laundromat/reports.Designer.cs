@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker_startDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_report = new System.Windows.Forms.DataGridView();
@@ -38,6 +40,7 @@
             this.cmb_driver = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_late = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_report)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +64,31 @@
             // 
             // dataGridView_report
             // 
+            this.dataGridView_report.AllowUserToAddRows = false;
+            this.dataGridView_report.AllowUserToDeleteRows = false;
             this.dataGridView_report.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_report.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_report.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_report.Location = new System.Drawing.Point(21, 295);
             this.dataGridView_report.Name = "dataGridView_report";
+            this.dataGridView_report.ReadOnly = true;
+            this.dataGridView_report.RowHeadersVisible = false;
             this.dataGridView_report.Size = new System.Drawing.Size(1318, 442);
             this.dataGridView_report.TabIndex = 4;
             // 
@@ -139,11 +162,24 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Driver";
             // 
+            // btn_late
+            // 
+            this.btn_late.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_late.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_late.Location = new System.Drawing.Point(658, 208);
+            this.btn_late.Name = "btn_late";
+            this.btn_late.Size = new System.Drawing.Size(175, 45);
+            this.btn_late.TabIndex = 13;
+            this.btn_late.Text = "View Late report";
+            this.btn_late.UseVisualStyleBackColor = true;
+            this.btn_late.Click += new System.EventHandler(this.btn_late_Click);
+            // 
             // reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_late);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_driver);
@@ -175,5 +211,6 @@
         private System.Windows.Forms.ComboBox cmb_driver;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_late;
     }
 }

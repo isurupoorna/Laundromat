@@ -236,7 +236,7 @@ namespace Laundromat
 
                         con.Open();
 
-                        SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' , leave_time = '" + click + "', vehicle_no = '" + vehicleNo + "', driver_name = '" + driverName + "' where root_id = '" + id + "'", con);
+                        SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'g' , leave_time = '" + click + "', vehicle_no = '" + vehicleNo + "', driver_name = '" + driverName + "' where root_id = '" + id + "' and date = (SELECT CONVERT (date, GETDATE())) ", con);
                         SqlCommand cmd1 = new SqlCommand("update vehicle_root SET status = 'g' where root_id = '" + id + "'", con);
                        // SqlCommand cmd2 = new SqlCommand("UPDATE tbl_timeTable SET vehicle_no = '" + vehicleNo + "' where root_id = '" + id + "'", con);
                        // SqlCommand cmd3 = new SqlCommand("UPDATE tbl_timeTable SET driver_name = '" + driverName + "' where root_id = '" + id + "'", con);
@@ -315,7 +315,7 @@ namespace Laundromat
                     string id = selectedRow.Cells[0].Value.ToString();
                     
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'f' , arrive_time = '"+click+"' where root_id = '" + id + "'", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE tbl_timeTable SET status = 'f' , arrive_time = '"+click+"' where root_id = '" + id + "' and date = (SELECT CONVERT (date, GETDATE())) ", con);
                     
                     cmd.ExecuteNonQuery();
                     

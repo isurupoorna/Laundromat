@@ -117,6 +117,7 @@
             this.dataGridView_displayOut.GridColor = System.Drawing.Color.White;
             this.dataGridView_displayOut.Location = new System.Drawing.Point(0, 89);
             this.dataGridView_displayOut.Name = "dataGridView_displayOut";
+            this.dataGridView_displayOut.ReadOnly = true;
             this.dataGridView_displayOut.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -138,42 +139,49 @@
             this.dgv_outVehicleNo.DataPropertyName = "vehicle_no";
             this.dgv_outVehicleNo.HeaderText = "Vehicle No";
             this.dgv_outVehicleNo.Name = "dgv_outVehicleNo";
+            this.dgv_outVehicleNo.ReadOnly = true;
             // 
             // dgv_outDriverName
             // 
             this.dgv_outDriverName.DataPropertyName = "driver_name";
             this.dgv_outDriverName.HeaderText = "Driver Name";
             this.dgv_outDriverName.Name = "dgv_outDriverName";
+            this.dgv_outDriverName.ReadOnly = true;
             // 
             // dgv_outDestination
             // 
             this.dgv_outDestination.DataPropertyName = "destination";
             this.dgv_outDestination.HeaderText = "Destination";
             this.dgv_outDestination.Name = "dgv_outDestination";
+            this.dgv_outDestination.ReadOnly = true;
             // 
             // dgv_outGroupLeaveTime
             // 
             this.dgv_outGroupLeaveTime.DataPropertyName = "gLeave_time";
             this.dgv_outGroupLeaveTime.HeaderText = "Lmat Leave Time";
             this.dgv_outGroupLeaveTime.Name = "dgv_outGroupLeaveTime";
+            this.dgv_outGroupLeaveTime.ReadOnly = true;
             // 
             // dgv_outTimeOut
             // 
             this.dgv_outTimeOut.DataPropertyName = "leave_time";
             this.dgv_outTimeOut.HeaderText = "Expected Time";
             this.dgv_outTimeOut.Name = "dgv_outTimeOut";
+            this.dgv_outTimeOut.ReadOnly = true;
             // 
             // dgv_outInTime
             // 
             this.dgv_outInTime.DataPropertyName = "arrive_time";
             this.dgv_outInTime.HeaderText = "In Time";
             this.dgv_outInTime.Name = "dgv_outInTime";
+            this.dgv_outInTime.ReadOnly = true;
             // 
             // dgv_outDriverNumber
             // 
             this.dgv_outDriverNumber.DataPropertyName = "driver_contact";
             this.dgv_outDriverNumber.HeaderText = "Driver Number";
             this.dgv_outDriverNumber.Name = "dgv_outDriverNumber";
+            this.dgv_outDriverNumber.ReadOnly = true;
             // 
             // pnl_headerTimeTable
             // 
@@ -257,6 +265,7 @@
             this.dataGridView_displayIn.GridColor = System.Drawing.Color.White;
             this.dataGridView_displayIn.Location = new System.Drawing.Point(0, 486);
             this.dataGridView_displayIn.Name = "dataGridView_displayIn";
+            this.dataGridView_displayIn.ReadOnly = true;
             this.dataGridView_displayIn.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -277,36 +286,42 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "vehicle_no";
             this.dataGridViewTextBoxColumn1.HeaderText = "Vehicle No";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "driver_name";
             this.dataGridViewTextBoxColumn5.HeaderText = "Driver Name";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "destination";
             this.dataGridViewTextBoxColumn2.HeaderText = "Destination";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "leave_time";
             this.dataGridViewTextBoxColumn3.HeaderText = "Left Time";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dgv_inGroupArrivalTime
             // 
             this.dgv_inGroupArrivalTime.DataPropertyName = "gArrival_time";
             this.dgv_inGroupArrivalTime.HeaderText = "Arrival Time";
             this.dgv_inGroupArrivalTime.Name = "dgv_inGroupArrivalTime";
+            this.dgv_inGroupArrivalTime.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "driver_contact";
             this.dataGridViewTextBoxColumn6.HeaderText = "Driver Number";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // timer_timeTableSystemTime
             // 
